@@ -1,12 +1,4 @@
-`
-######################################################################################
- ____  _          _ _    ____               _     _                  
-/ ___|| |__   ___| | |  / ___|_ __  _   _  | |   (_)_ __  _   ___  __
-\___ \| '_ \ / _ \ | | | |  _| '_ \| | | | | |   | | '_ \| | | \ \/ /
- ___) | | | |  __/ | | | |_| | | | | |_| | | |___| | | | | |_| |>  < 
-|____/|_| |_|\___|_|_|  \____|_| |_|\__,_| |_____|_|_| |_|\__,_/_/\_\
-######################################################################################
-`
+# Curso em Live de Shell Gnu/Linux
 ## O shell Unix
 O conceito de uma interface capaz de receber os comandos de um utilizador, interpretá-los e passá-los para um sistema operacional precede, em quase uma década, a criação do sistema operacional UNIX. Mas foi só com o surgimento deste último, na virada de 1969 para 1970, que esse tipo de interface começou a tomar a forma do shell que encontramos, ainda hoje, nos nossos sistemas operacionais GNU/Linux. Na verdade, para além da sua longevidade, o shell do UNIX introduziu inovações que mudaram, para sempre, como operamos computadores e pensamos a própria computação.
 
@@ -124,9 +116,9 @@ Inteface de comandos
 grep paulo /etc/passwd
 echo $HOME ctrl+alt+e
 
---------------------------------------------
-|   AULA 2 - CURSO SEHLL GNU/LINUX         |
---------------------------------------------
+## AULA 2 - CURSO SEHLL GNU/LINUX      
+
+
 Curso Shell GNU/Linux - Aula 2: Ao seu comando!
 
 
