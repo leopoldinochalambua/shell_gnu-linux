@@ -5,216 +5,8 @@
 - Copyright © 2020, Blau Araujo
 
 > **Publicado sob os termos da licença CC-BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/**
-
-# Prefácio, por Paulo Kretcheu.
-# Introdução e convenções.
-# Sobre a organização dos tópicos.
-# Instale o Bash.
-# Convenções tipográficas.
-# A filosofia Unix.
-# 1 – O que é um shell.
-## 1.1 – Iniciando e terminando sessões do shell.
-### 1.1.1 – Iniciando o shell.
-### 1.1.2 – O que é um script.
-### 1.1.3 – Dando permissão de execução.
-### 1.1.4 – Invocando o shell na linha de comandos.
-### 1.1.5 – Encerrando o shell.
-## 1.2 – O prompt de comandos.
-### 1.2.1 – Usuário administrativo (root).
-### 1.2.2 – Mais informações no prompt.
-### 1.2.3 – Um pequeno desvio – o tal do til (~).
-### 1.2.4 – Voltando ao prompt.
-### 1.2.5 – A variável PS1.
-### 1.2.6 – Caracteres de comando do prompt.
-### 1.2.7 – Expandindo valores de variáveis.
-## 1.3 – Executando no console ou no terminal.
-### 1.3.1 – Um pouco de história.
-### 1.3.2 – Terminal ou console?.
-## 1.4 – Os vários shells.
-### 1.4.1 – Sobre os padrões POSIX.
-## 1.5 – Descobrindo o shell em execução.
-### 1.5.1 – A variável de ambiente SHELL.
-### 1.5.2 – Lendo o conteúdo de /etc/passwd.
-## 1.6 – Alterando o shell.
-### 1.6.1 – O comando ‘chsh’.
-### 1.7 – O shell de login.
-## 1.8 – Modos de execução.
-### 1.8.1 – Modo interativo.
-### 1.8.2 – Modo não-interativo.
-### 1.8.3 – Como detectar se estamos ou não no modo interativo.
-## 1.9 – Obtendo ajuda.
-### 1.9.1 – Manual online.
-### 1.9.2 – Comando ‘man’.
-### 1.9.3 – Comando interno ‘help’.
-### 1.9.4 – Descobrindo se o comando é ou não é builtin.
-### 1.9.5 – Redirecionando mensagens e capturando estados de saída.
-### 1.9.6 – Enviando saídas para o limbo.
-# 2 – O Bash como linguagem de programação.
-## 2.1 – O que é um programa.
-### 2.1.1 – Linguagens compiladas e interpretadas.
-### 2.1.2 – O Bash é um interpretador de comandos.
-### 2.1.3 – Operadores de controle.
-### 2.1.4 – Executando comandos em segundo plano.
-### 2.1.5 – Encadeando comandos condicionalmente.
-### 2.1.6 – Classificações do Bash como linguagem de programação.
-## 2.2 – Nosso primeiro programa em Bash.
-### 2.2.1 – A variável PATH é o caminho.
-### 2.2.2 – Portabilidade e a linha do interpretador.
-### 2.2.3 – O shell não sabe o que são extensões de arquivos.
-### 2.2.4 – Organizando o fluxo de trabalho com links simbólicos.
-### 2.2.5 – Quem disse que o Bash não trabalha com valores lógicos?.
-### 2.2.6 – Toda falsidade é um erro.
-### 2.2.7 – Programar é uma forma de expressão.
-### 2.2.8 – Novamente: cuidado com o que você acha que é lógico!.
-### 2.2.9 – Testando “expressões condicionais”?!.
-### 2.2.10 – Voltando ao link simbólico do nosso script.
-### 2.3 – Um script para criar scripts.
-### 2.3.1 – A escolha do editor.
-### 2.3.2 – Padronizando uma pasta de projetos.
-### 2.3.3 – Tornando o arquivo executável..
-### 2.3.4 – Verificações e tratamento de erros.
-### 2.3.5 – Como o programa será utilizado.
-### 2.3.6 – O modelo do novo script.
-### 2.3.7 – O que falta saber.
-### 2.3.8 – Recebendo dados do usuário como parâmetros.
-### 2.3.9 – Explorando igualdades e desigualdades.
-### 2.3.10 – Comparando padrões e expressões regulares.
-### 2.3.11 – As classes POSIX.
-### 2.3.12 – Algumas regras para entender de regex no Bash.
-### 2.3.13 – Sofrendo com as variáveis LANG e LC_*.
-### 2.3.14 – Testando a existência de pastas e arquivos.
-### 2.3.15 – Reaproveitando código com funções.
-### 2.3.16 – Armazenando mensagens em vetores indexados.
-### 2.3.17 – Substituição de comandos.
-### 2.3.18 – Com aspas duplas, simples ou sem aspas?.
-### 2.3.19 – Finalizando o seu script..
-# 3 – Variáveis.
-### 3.1 – Nomeando variáveis.
-### 3.2 – Vetores (arrays).
-### 3.3 – Acessando valores.
-### 3.4 – Indireções.
-### 3.5 – Número de elementos e de caracteres.
-### 3.6 – Escopo de variáveis.
-### 3.6.1 – Sessões filhas.
-### 3.6.2 – Variáveis de ambiente.
-### 3.6.3 – Subshells.
-### 3.7 – Variáveis inalteráveis (read-only).
-### 3.8 – Destruindo variáveis.
-### 3.9 – Variáveis são parâmetros.
-### 3.10 – Parâmetros especiais.
-# 4 – Expansões do shell.
-### 4.1 – A expansão dos aliases.
-### 4.2 – As outras expansões.
-### 4.3 – Como funcionam as aspas.
-### 4.3.1 – Caractere de escape.
-### 4.3.2 – Aspas simples.
-### 4.3.3 – Aspas duplas.
-### 4.3.4 – Expansão de caracteres ANSI-C.
-### 4.3.5 – Espaços e quebras de linha.
-### 4.3.6 – Comentários – a restrição máxima.
-## 4.4 – Divisão de palavras.
-## 4.5 – Remoção de aspas.
-## 4.6 – Expansão do til.
-### 4.6.1 – Expandindo pastas de usuários específicos.
-### 4.6.2 – Expandindo o diretório corrente.
-### 4.6.3 – Expandindo o último diretório visitado.
-### 4.6.4 – Expandindo diretórios empilhados.
-### 4.6.5 – Atenção para a ordem da expansão do til.
-## 4.7 – Expansões de chaves.
-## 4.8 – Expansão de nomes de arquivos.
-### 4.8.1 – Como funciona a expansão de nomes de arquivos.
-### 4.8.2 – Listando arquivos com o comando ‘echo’.
-### 4.8.3 – A opção ‘nullglob’.
-### 4.8.4 – Formação de padrões.
-### 4.8.5 – Ignorando nomes de arquivos.
-### 4.8.6 – ‘Globs’ estendidos.
-## 4.9 – Expansão de parâmetros.
-### 4.9.1 – Substrings.
-### 4.9.2 – Faixas de elementos de arrays.
-### 4.9.3 – Remoções e substituições a partir de padrões.
-### 4.9.4 – Uma pausa para o comando ‘set’.
-### 4.9.5 – Voltando às remoções e substituições.
-### 4.9.6 – Expandindo valores condicionalmente.
-### 4.9.7 – Alterando a caixa do texto.
-### 4.9.8 – Outras expansões de parâmetros.
-## 4.10 – Substituição de comandos.
-### 4.10.1 – Armazenando e expandindo a saída de comandos.
-### 4.10.2 – Cuidado com o escopo das variáveis.
-### 4.10.3 – Saída em múltiplas linhas.
-### 4.10.4 – Expandindo o conteúdo de arquivos.
-### 4.10.5 – Comprando ‘cat’ por lebre.
-### 4.10.6 – A sintaxe antiga.
-## 4.11 – Expansões aritméticas.
-## 4.12 – Substituição de processos.
-# 5 – Fluxos de dados e redirecionamentos.
-## 5.1 – Fluxos de entrada e saída de dados.
-## 5.2 – Os descritores de arquivos.
-## 5.3 – Os fluxos padrão (stdin, stdout e stderr).
-## 5.4 – Lendo a entrada padrão.
-## 5.5 – Enviando dados para a entrada padrão.
-### 5.5.1 – Redirecionamento de arquivos para stdin.
-### 5.5.2 – Eis o here-document.
-### 5.5.3 – Aqui está a here-string.
-## 5.6 – Redirecionamento das saídas.
-### 5.6.1 – Redirecionamento da saída para arquivos.
-### 5.6.2 – Redirecionamento para append em arquivos.
-## 5.7 – Pipes.
-# 6 - Operadores e expressões.
-## 6.1 – Operadores do contexto de comandos.
-### 6.1.1 – Operadores de controle.
-### 6.1.2 – Operadores de redirecionamento.
-## 6.2 – Operadores do contexto de expressões.
-## 6.3 – Operadores de expressões afirmativas.
-### 6.3.1 – Operadores unários de arquivos.
-### 6.3.2 – Operadores binários de arquivos.
-### 6.3.3 – Operadores de strings.
-### 6.3.4 – Operadores de comparação numérica.
-### 6.3.5 – Operadores para configurações e variáveis.
-### 6.3.6 – Operadores lógicos.
-## 6.4 – Operadores de expressões aritméticas.
-### 6.4.1 – Operadores de atribuição.
-### 6.4.2 – Operadores aritméticos.
-### 6.4.3 – Operadores de incremento e decremento.
-### 6.4.4 – Operadores bit-a-bit.
-### 6.4.5 – Operadores lógicos.
-### 6.4.6 – Operadores de comparação.
-### 6.4.7 – Operador condicional.
-### 6.4.8 – Operadores unários de sinal.
-## 6.5 – Precedência de operadores.
-# 7 – Comandos compostos.
-### 7.1 – Agrupando comandos com chaves e parêntesis.
-### 7.2 – Estruturas de decisão.
-### 7.2.1 – Grupos e operadores de controle condicional.
-### 7.2.2 – O comando composto ‘if’.
-### 7.2.3 – O comando composto ‘case’.
-### 7.3 – Estruturas de repetição.
-### 7.3.1 – O loop ‘for’.
-### 7.3.2 – Os loops ‘while’ e ‘until’.
-### 7.3.3 – Cadê o loop ‘do-while’?.
-### 7.3.4 – Loops infinitos com ‘while’ e ‘until’.
-### 7.3.5 – Saindo do loop com ‘break’.
-### 7.3.6 – Pulando o restante da iteração com ‘continue’.
-### 7.3.7 – Criando menus com loops infinitos.
-### 7.3.8 – O menu ‘select’.
-### 7.3.9 – O prompt PS3.
-# 8 – Funções.
-## 8.1 – Criando funções com outros comandos compostos.
-### 8.1.1 – Funções com agrupamentos em parêntesis.
-### 8.1.2 – Testes nomeados.
-### 8.1.3 – Expressões aritméticas nomeadas.
-### 8.1.4 – Um loop for nomeado.
-### 8.1.5 – Um menu select nomeado.
-## 8.2 – Sobre os nomes das funções.
-## 8.3 – Passagem de argumentos para funções.
-## 8.4 – Escopo de variáveis em funções.
-## 8.5 – Destruindo funções.
-## 8.6 – Retorno de funções no Bash.
-## 8.7 – Obtendo o nome da função.
-## 8.8 – Variáveis, aliases e funções
-## 9 – Uma mensagem (quase) final
-## Índice de Exemplo
                                               
-# Prefácio, por Paulo Kretcheu
+## Prefácio, por Paulo Kretcheu
 
 Quando meu novo amigo Blau Araújo me pediu para escrever esse prefácio, de pronto aceitei.
 
@@ -235,7 +27,7 @@ Espero que, como eu, você desfrute dessa obra de leitura tranquila e divertida.
 
 > **Paulo Kretcheu | 24 de outubro de 2020**
 
-# Introdução e convenções
+## Introdução e convenções
 
 Se você achou que encontraria um manual com todas as informações e exemplos de uso de todos os comandos e recursos do Bash, você entendeu errado o nome deste livro. Este é um manual do programador que utiliza os conceitos da Filosofia Unix, conforme implementada pelo Projeto GNU, para programar em Bash. Pense comigo: qual o sentido escrever mais um livro falando dos mesmos comandos e utilitários do shell padrão do sistema operacional GNU quando já temos as obras de escritores e programadores geniais do calibre de um Júlio Neves ou de um Aurélio Jargas? Boa parte da minha motivação para esse empreendimento, aliás, vem justamente da paixão pelo shell que eu compartilho com esses mestres – e talvez esta seja a única coisa que nós tenhamos em comum.
 
@@ -243,7 +35,7 @@ Ironicamente, com eles, eu nunca aprendi a programar em shell! Para isso, bastar
 
 Com toda humildade de quem reconhece a sua própria estatura diante de gigantes, é isso que eu me proponho a fazer neste livro. Mais do que oferecer mais uma fonte de consulta para o seu arsenal de programador, o que eu realmente quero é convidá-lo para uma jornada de descobertas, onde cada novo conceito, cada comando, cada linha de código seja uma surpresa e um motivo a mais para você se apaixonar pela possibilidade de programar em Bash.
 
-# Sobre a organização dos tópicos
+## Sobre a organização dos tópicos
 
 Quando comecei a ensinar linguagens de programação, umas das coisas que logo chamaram a minha atenção foi o fato de que não há como explicar um conceito básico sem recorrer a exemplos que envolvam os conceitos mais avançados. Um simples “Olá, mundo”, em qualquer linguagem, sempre fará referência a uma ou duas coisas que só poderão ser abordadas a fundo bem mais adiante numa sequência progressiva.
 
@@ -255,11 +47,11 @@ A minha visão pessoal do que seria um aprendizado progressivo acabou restrita �
 - **No capítulo 2** - O Bash como linguagem de programação, além de abordarmos as peculiaridades do desenvolvimento em Bash, nós trabalharemos em um pequeno projeto: um script para criar scripts, e teremos inúmeras oportunidades para tomar contato, na prática, com quase tudo que precisamos saber para começar-mos a programar em Bash.
 - **Do capítulo 3** em diante, entra em cena o nosso lado mais        “manual”. A partir daqui, você poderá ler os tópicos em sequência ou, se achar melhor, pode utilizá-los como fonte de consulta quando precisar de alguma informação – você decide.
 
-# Instale o Bash
+## Instale o Bash
 
 Felizmente, não há como aprender o Bash sem que ele esteja instalado e disponível para os nossos experimentos (seria muito chato se isso fosse possível). Se você usa o sistema operacional GNU/Linux, que é o foco deste livro, é bem provável que ele já seja o seu shell padrão. Mas, se não for, todas as distribuições oferecem formas simples de instalá-lo. De qualquer forma, se for o caso, os procedimentos podem variar muito e eu poderia atrapalhar mais do que ajudar. Então, a minha sugestão é que você consulte a documentação ou as comunidades de ajuda do seu sistema operacional.
 
-# Convenções tipográficas
+## Convenções tipográficas
 
 No texto, tudo que aparecer em itálico representa algo que merece a sua atenção por algum motivo – podem ser termos ou expressões que serão explicados posteriormente, em outros idiomas, ou apenas eu tentando aguçar a sua curiosidade.
 
@@ -334,7 +126,7 @@ formas:
 
 Mas isso é apenas uma impressão causada pela experiência de utilização do sistema operacional. Na verdade, sempre que um shell é iniciado, significa que algo invocou o seu executável de alguma forma. Quando abrimos um terminal, por exemplo, a primeira coisa que vemos é o prompt do shell. Isso significa que, ao ser iniciado, o terminal invocou o executável de um shell.
 
-img-prompt
+![bash](imagens/bash13.png)
 
 > **Pense nisso:** o emulador de terminal é um programa cuja única finalidade é executar um shell.
 
@@ -430,7 +222,7 @@ De fato, o shell `sh` não está mais na lista de processos ativos!
 
 Quando fazemos o login no console, ou quando abrimos um terminal no ambiente gráfico, o shell é iniciado e nós somos apresentados a um conjunto de caracteres, símbolos e um cursor no local onde os comandos deverão ser digitados. Isso significa que o shell está pronto e esperando pelos nossos comandos.
 
-img-prompt
+![bash](imagens/bash12.png)
 
 É justamente desse estado de prontidão do shell que vem a expressão **prompt de comandos**, utilizada para designar o ponto de entrada dos comandos no terminal.
 
@@ -442,17 +234,17 @@ como é o caso, por exemplo, de um login feito como usuário root.
 
 ### 1.2.1 – Usuário administrativo (root)
 
-Em sistemas operacionais unix-like, o usuário root é uma conta especial que tem permissões para executar qualquer tipo de ação no sistema – inclusive, destruí-lo completamente! Então, nada mais natural do que recebermos algum tipo de indicação quando estivermos trabalhando logados como usuário root.
+Em sistemas operacionais `unix-like`, o usuário root é uma conta especial que tem permissões para executar qualquer tipo de ação no sistema – inclusive, destruí-lo completamente! Então, nada mais natural do que recebermos algum tipo de indicação quando estivermos trabalhando logados como usuário root.
 
 No prompt, esta indicação geralmente é feita com o símbolo `#`(cardinal) no lugar do `$` ou do símbolo que for utilizado para indicar o login de um usuário comum.
 
-Exemplos de shell com usuário **comun** no Debian GNU/Linux.
-
-![bash](imagens/bash11.png)
-
-Exemplos de shell com usuário **root** no Debian GNU/Linux.
+**Exemplos de shell com usuário "comun" no Debian GNU/Linux.**
 
 ![bash](imagens/bash12.png)
+
+**Exemplos de shell com usuário "root" no Debian GNU/Linux.**
+
+![bash](imagens/bash11.png)
 
 > **Importante!** Fique atento ao seu prompt e, a menos que seja orientado a fazer o contrário, jamais execute os nossos exemplos e experimentos como usuário **root!**
 
@@ -478,27 +270,27 @@ Deste modo, o comando `echo` sequer chega a “ver” o til digitado na linha de
 
 No prompt, o til também representa a nossa pasta de usuário, mas ali é só isso, não há uma expansão, ele só está encurtando o tamanho do prompt. Isso é necessário porque, a partir da pasta de usuário, nós podemos navegar por outras pastas ligadas a ela, e o prompt geralmente é configurado para exibir em que pasta estamos no momento.
 
-Então, se eu entrar na pasta Documentos e, dentro dela, eu entrar na pasta clientes, o prompt será alterado para exibir todo o caminho a partir da minha pasta pessoal: :~/Documentos/clientes$.
+Então, se eu entrar na pasta Documentos e, dentro dela, eu entrar na pasta clientes, o prompt será alterado para exibir todo o caminho a partir da minha pasta pessoal: `~/Documentos/scrip$`.
 
-img-
+![prompt](imagens/bash13.png)
 
 ### 1.2.5 - A variável PS1
 
-O prompt é configurado a partir de uma variável de ambiente chamada PS1 (Prompt String 1, em inglês), que é uma entre quatro variáveis que definem algum tipo de prompt. Mas você deve estar se perguntando: **“o que é uma variável de ambiente?”**
+O prompt é configurado a partir de uma variável de ambiente chamada `PS1` (Prompt String 1, em inglês), que é uma entre quatro variáveis que definem algum tipo de prompt. Mas você deve estar se perguntando: **“o que é uma variável de ambiente?”**
 
 Nós veremos isso mais a fundo no capítulo 3, mas pense numa variável como uma gaveta onde você pode guardar algum tipo de informação. Sempre que precisar dessa informação, basta abrir a gaveta que ela estará lá. Quando trabalhamos com o shell, ou em qualquer linguagem de programação, nós podemos criar várias dessas gavetas para as mais diversas finalidades (seja no terminal ou em scripts), e o shell faz a mesma coisa em várias situações.
 
-Especificamente na inicialização do shell (quando abrimos um terminal ou fazemos um login no console), algumas variáveis serão criadas para definir inúmeros aspectos do ambiente em que ele será executado – são as variáveis de ambiente. Uma dessas variáveis de ambiente é justamente a variável PS1, e a informação que ela armazena é uma string que representa o que será exibido no prompt de comando.
+Especificamente na inicialização do shell (quando abrimos um terminal ou fazemos um login no console), algumas variáveis serão criadas para definir inúmeros aspectos do ambiente em que ele será executado – são as variáveis de ambiente. Uma dessas variáveis de ambiente é justamente a variável `PS1`, e a informação que ela armazena é uma string que representa o que será exibido no prompt de comando.
 
-Na maioria das distribuições GNU/Linux, o prompt é configurado para exibir algo assim:
+Na maioria das distribuições GNU/Linux, o prompt é configurado para exibir algo assim: `paulo@debian13:~$`.
 
-blau@enterprise:~$
+![prompt](imagens/bash12.png)
 
 ### 1.2.6 - Caracteres de comando do prompt
 
 Cada um dos componentes do prompt acima é definido na string armazenada na variável PS1 a partir de um código especial iniciado com `\` (barra invertida ou escape) representado por um caractere que equivale a um comando específico a ser executado na expansão da string que formará o prompt.
 
-**eja na tabela:**
+**Veja na tabela:**
 
 | **Código** | **Descrição** |
 |--------|-------------------|
@@ -519,30 +311,33 @@ Se quisermos testar como fica a aparência da configuração acima, existem algu
 
 **Exemplo 1.10 – Alterando o valor em ‘PS1’.**
 
-:~$ PS1='\u@\h:\w\$ '
- blau@enterprise:~$
+![prompt](imagens/bash14.png)
 
 O sinal de igual `(=)` é um dos operadores do shell (capítulo 6), e é responsável por realizar atribuições de valores a variáveis. Portanto, note que a linha da configuração do prompt é um comando do shell como outro qualquer.
 
 No exemplo, quando o comando de atribuição foi executado, a alteração do prompt foi imediata, mas o seu efeito será limitado ao shell em execução no momento, ou seja, não afetará sessões do shell iniciadas posteriormente.
 
-Para que a alteração fosse definitiva, seria preciso editar um dos arquivos de configuração do Bash, o que pode ser feito apenas para o usuário editando o arquivo .bashrc, um arquivo oculto (iniciado com ponto) que fica na nossa pasta pessoal. Se fosse este o caso, bastaria abrir o arquivo .bashrc e incluir a linha do comando de atribuição ao final do texto, mas a mudança só teria efeito a partir de duas condições: reiniciando o terminal ou executando:
+Para que a alteração fosse definitiva, seria preciso editar um dos arquivos de configuração do Bash, o que pode ser feito apenas para o usuário editando o arquivo `.bashrc`, um arquivo oculto (iniciado com ponto) que fica na nossa pasta pessoal. 
+
+![prompt](imagens/bash15.png)
+
+Se fosse este o caso, bastaria abrir o arquivo `.bashrc` e incluir a linha do comando de atribuição ao final do texto, mas a mudança só teria efeito a partir de duas condições: reiniciando o terminal ou executando:
 
 **Exemplo 1.11 – Aplicado alterações no arquivo ‘~/.bashrc’.**
 
-:~$ source ~/.bashrc
+![prompt](imagens/bash16.png)
 
-O comando source é outro comando interno (builtin) do Bash e serve para executar na sessão corrente do shell os comandos em um arquivo. Então, tudo que o comando do exemplo 1.11 faz é executar o conteúdo do arquivo .bashrc na sessão atual do Bash, inclusive a definição do nosso prompt.
+O comando `source` é outro comando interno (builtin) do Bash e serve para executar na sessão corrente do shell os comandos em um arquivo. Então, tudo que o comando do exemplo 1.11 faz é executar o conteúdo do arquivo .bashrc na sessão atual do Bash, inclusive a definição do nosso prompt.
 
 Aliás, se você executou o comando do exemplo 1.10 apenas para ver como ficaria o seu prompt e quer uma forma de restaurar as configurações originais, basta fazer um outro source do .bashrc, como fizemos no exemplo 1.11.
 
-> **Dica:** nós podemos abreviar o comando source utilizando um ponto (.) em seu lugar: . ~/.bashrc.
+> **Dica:** nós podemos abreviar o comando source utilizando um ponto (.) em seu lugar: `. ~/.bashrc.`.
 
 Uma coisa interessante sobre os caracteres de controle que utilizamos na configuração do prompt, é que eles só serão executados sob certas condições. Por isso, nós temos que recorrer a uma das expansões do shell se quisermos visualizar um prompt sem que isso afete a exibição atual. Antes, porém, precisamos descobrir como os valores das variáveis podem ser acessados.
 
 ### 1.2.7 - Expandindo valores de variáveis
 
-Voltando à analogia das gavetas, nossas variáveis precisam de um puxador. No Bash, esse puxador é o símbolo $ (não confunda com o $ do prompt). Veja na tabela abaixo como ficam os nomes das variáveis nas situações de atribuição e de expansão de valores:
+Voltando à analogia das gavetas, nossas variáveis precisam de um puxador. No Bash, esse puxador é o símbolo `$` (não confunda com o $ do prompt). Veja na tabela abaixo como ficam os nomes das variáveis nas situações de atribuição e de expansão de valores:
 
 | **Sintaxe** | **Descrição** |
 |------------ |---------------|
@@ -556,13 +351,11 @@ Observe um exemplo de criação e expansão de uma variável:
 
 **Exemplo 1.12 – Expandindo valores em variáveis.**
 
-:~$ fruta=banana
-:~$ echo $fruta
- banana
+![prompt](imagens/bash17.png)
 
-A primeira linha já deve ser fácil de entender – nós executamos uma operação de atribuição do valor banana à variável fruta. O comando echo também é um velho conhecido, assim como o fato do shell realizar expansões antes de executar os comandos. Sendo assim, o comando echo, em vez de enxergar a expressão $fruta, verá apenas o conteúdo da variável e, portanto, exibirá banana no terminal.
+A primeira linha já deve ser fácil de entender – nós executamos uma operação de atribuição do valor `banana` à variável `fruta`. O comando `echo` também é um velho conhecido, assim como o fato do shell realizar expansões antes de executar os comandos. Sendo assim, o comando `echo`, em vez de enxergar a expressão $fruta, verá apenas o conteúdo da variável e, portanto, exibirá banana no terminal.
 
-Mas talvez você esteja se perguntando: “o que isso tudo tem a ver com as configurações do prompt?” – e a resposta é: tudo!
+**Mas talvez você esteja se perguntando: “o que isso tudo tem a ver com as configurações do prompt?”** – e a resposta é: tudo!
 
 Por exemplo, se quisermos ver como fica a nossa configuração do prompt, basta atribuí-la a uma variável e utilizar a expansão da variável como atributo do comando echo.
 
@@ -570,26 +363,19 @@ Mas veja o que realmente aconteceria observando o exemplo abaixo:
 
 **Exemplo 1.13a – Exibindo a configuração do prompt.**
 
-:~$ p='\u@\h:\w\$ '
-:~$ echo $p
-\u@\h:\w\$
+![prompt](imagens/bash18.png)
 
 Observe que os caracteres de controle não foram executados. Eu também poderia ter feito assim e nada de especial seria exibido:
 
 **Exemplo 1.13b – Exibindo a configuração do prompt.**
 
-:~$ p='\u@\h:\w\$ '
-:~$ echo ${p}
-\u@\h:\w\$
+![prompt](imagens/bash19.png)
 
-Mas, o que eu ainda não contei é que nós podemos interferir na forma como as expansões são feitas pelo shell (mais sobre isso no capítulo 4) introduzindo outros símbolos junto ao nome da variável entre as chaves. Então, quando queremos que os caracteres de controle da string em PS1 sejam executados, nós podemos incluir os caracteres @P logo depois do nome da variável:
+Mas, o que eu ainda não contei é que nós podemos interferir na forma como as expansões são feitas pelo shell (mais sobre isso no capítulo 4) introduzindo outros símbolos junto ao nome da variável entre as chaves. Então, quando queremos que os caracteres de controle da string em `PS1` sejam executados, nós podemos incluir os caracteres `@P` logo depois do nome da variável:
 
 **Exemplo 1.13c – Exibindo o prompt a partir da configuração.**
 
-:~$ p='\u@\h:\w\$ '
-:~$ echo ${p@P}
-blau@enterprise:~$
-:~$
+![prompt](imagens/bash20.png)
 
 Perceba que o meu prompt original não foi alterado e eu pude visualizar o resultado da nova configuração sem alterar nada!
 
@@ -617,25 +403,28 @@ Com o utilitário tty é possível verificar se o shell está sendo executado em
 
 **Exemplo 1.14 – Executando o utilitário ‘tty’ no terminal.**
 
- :~$ tty
- /dev/pts/0
+![prompt](imagens/bash21.png)
 
-Aqui nós temos algumas informações bem interessantes para discutir, a começar pelo fato do utilitário tty ter retornado um caminho (no caso, /dev/pts/0). Isso aconteceu porque, primeiro, é exatamente para isso que serve o utilitário tty: exibir o nome do arquivo do terminal conectado à saída padrão, e segundo, do ponto de vista dos sistemas operacionais unix-like, tudo, inclusive o hardware, possui uma representação naforma de um arquivo.
+Aqui nós temos algumas informações bem interessantes para discutir, a começar pelo fato do utilitário tty ter retornado um caminho (no caso, `/dev/pts/0`). Isso aconteceu porque, primeiro, é exatamente para isso que serve o utilitário tty: exibir o nome do arquivo do terminal conectado à saída padrão, e segundo, do ponto de vista dos sistemas operacionais unix-like, tudo, inclusive o hardware, possui uma representação naforma de um arquivo.
 
-> A propósito: a pasta /dev tem seu nome derivado justamente do termo em inglês “device”, que significa “dispositivo”, e é o local onde podemos encontrar os arquivos correspondentes aos dispositivos de hardware no sistema.
+> **A propósito:** a pasta `/dev` tem seu nome derivado justamente do termo em inglês “device”, que significa “dispositivo”, e é o local onde podemos encontrar os arquivos correspondentes aos dispositivos de hardware no sistema.
 
-A outra informação relevante – talvez a mais importante, tendo em conta a finalidade do programa – é o fato do dispositivo ter sido nomeado como pts, o que deixa bastante claro que o nosso terminal é um pseudoterminal secundário.
+![prompt](imagens/bash22.png)
 
-Se quisermos verificar a saída do utilitário tty no console, nós teremos que sair do modo gráfico, o que é feito pressionando as teclas CTRL+ALT+Fn, onde Fn geralmente é uma tecla de função entre F1 e F6. O atalho para retornar ao modo gráfico, porém, dependerá de como ele foi iniciado. Se você utiliza algum tipo de gerenciador gráfico de display (como o LightDM ou o GDM, por exemplo), é bem provável que o atalho seja CTRL+ALT+F7. Caso não seja, o mais provável é que você tenha que utilizar o atalho CTRL+ALT+F1.
+A outra informação relevante – talvez a mais importante, tendo em conta a finalidade do programa – é o fato do dispositivo ter sido nomeado como `pts`, o que deixa bastante claro que o nosso terminal é um pseudoterminal secundário.
+
+Se quisermos verificar a saída do utilitário tty no console, nós teremos que sair do modo gráfico, o que é feito pressionando as teclas [CTRL+ALT+Fn], onde `Fn` geralmente é uma tecla de função entre F1 e F6. O atalho para retornar ao modo gráfico, porém, dependerá de como ele foi iniciado. Se você utiliza algum tipo de gerenciador gráfico de display (como o LightDM ou o GDM, por exemplo), é bem provável que o atalho seja [CTRL+ALT+F7]. Caso não seja, o mais provável é que você tenha que utilizar o atalho [CTRL+ALT+F1].
 
 > Não tenha pressa de entender como isso funciona. O nosso experimento com o programa tty no console nos dará uma ideia melhor de como funciona essa numeração dos atalhos para sair do modo gráfico e voltar.
 
-Assim que estiver no console, você verá uma mensagem pedindo seu nome de usuário e, logo em seguida, a sua senha. Se você introduzir corretamente seus dados, um shell de login (mais sobre isso no tópico 1.7) será carregado. Já com o prompt visível, nós iremos executar o tty. No meu caso, como eu utilizei o atalho Ctrl+Alt+F2 para entrar no console, o resultado foi esse:
+Assim que estiver no console, você verá uma mensagem pedindo seu nome de usuário e, logo em seguida, a sua senha. Se você introduzir corretamente seus dados, um shell de login (mais sobre isso no tópico 1.7) será carregado. Já com o prompt visível, nós iremos executar o tty. No meu caso, como eu utilizei o atalho [Ctrl+Alt+F2] para entrar no console, o resultado foi esse:
 
-Exemplo 1.15 – Executando o utilitário ‘tty’ no console.
+**Exemplo 1.15 – Executando o utilitário ‘tty’ no console.**
 
- :~$ tty
- /dev/tty2
+```bash
+paulo@debian13: tty
+/dev/tty2
+```
 
 Diferente do resultado no terminal, agora o dispositivo se chama tty2, e isso indica que eu estou utilizando o segundo console TTY dentre os disponíveis no meu sistema.
 
@@ -645,19 +434,17 @@ Eu iniciei o console tty2 porque, como eu não utilizo gerenciadores de display,
 
 Mas o programa tty ainda tem outra forma de ser utilizado. Com a opção -s (slient, “silenciosa”), ele não retornará nada visível: 
 
-Exemplo 1.16 – Comando ‘tty -s’.
+**Exemplo 1.16 – Comando ‘tty -s’.**
 
-:~$ tty -s
-:~$
+![prompt](imagens/bash23.png)
 
 Isso pode parecer meio inútil, mas é só na aparência. Na verdade, mesmo que não apresentem nada visível como saída, todos os comandos e programas informam o seu estado de saída, ou seja, se eles terminaram a sua execução com sucesso ou com erro.
 
-Para capturar o estado de saída de um comando, o Bash nos oferece uma variável interna chamada ?. Nós já sabemos acessar os valores das variáveis, então vamos ver o que acontece com o comando tty -s: 
+Para capturar o estado de saída de um comando, o Bash nos oferece uma variável interna chamada `?`. Nós já sabemos acessar os valores das variáveis, então vamos ver o que acontece com o comando `tty -s`.
 
-Exemplo 1.17 – Capturando a saída do comando ‘tty -s’.
+**Exemplo 1.17 – Capturando a saída do comando ‘tty -s’.**
 
-:~$ tty -s
-:~$ echo $?
+![prompt](imagens/bash24.png)
 
 Aqui, o valor retornado foi zero ( 0). Para o shell, um estado de saída zero indica que o comando (ou o programa) terminou com sucesso, enquanto qualquer estado de saída com valor diferente de zero representa um erro. 
 
@@ -672,6 +459,10 @@ Dizem que “tudo é prego para quem só conhece martelo”, mas nós temos muit
 Neste sentido, não podemos nos esquecer de que o Bash não é o único shell utilizado por aí. Eventualmente, nossos scripts em Bash poderão parar nas mãos de alguém que utiliza algum desses outros shells por padrão no seu sistema. A rigor, isso não é um problema – o Bash pode ser instalado em qualquer sistema unix-like, e a decisão de rodar nossos scripts vem sempre com a responsabilidade prover os requisitos necessários para isso.
 
 Seja como for, o ponto é que existem algumas convenções estabelecidas para garantir um mínimo de portabilidade de scripts escritos em shell, e este é o caso do conjunto de normas de compatibilidade estabelecidas no padrão POSIX. Alguns shells foram desenvolvidos de forma a adequarem-se aos padrões POSIX, outros mantém configurações compatíveis, mas oferecem recursos que não atendem totalmente às normas. Há também os shells que foram escritos priorizando outros critérios, como a facilidade de uso, o desempenho, ou até os recursos que oferecem para a criação de programas. 
+
+Podemos ver quais shell temos no sistema com o comando abaixo:
+
+![prompt](imagens/bash25.png)
 
 **Aqui está uma lista de alguns desses shells:**
 
@@ -690,9 +481,9 @@ Para nós, obviamente, o que interessa é o Bash, que é o shell padrão do Proj
 
 Cada shell tem a sua forma própria de receber e interpretar os comandos dos usuários. Sendo assim, se estivermos escrevendo um script em Bash que precisará ser compatível com plataformas que utilizem outros shells, é bem provável que tenhamos que observar as definições das normas POSIX.
 
-POSIX vem de Portable Operating System Interface (ou “Interface Portável Entre Sistemas Operacionais”, em português). Então, como o próprio nome diz, o objetivo das normas POSIX é garantir a portabilidade do código. Porém, a não ser em casos raros e muito específicos, portabilidade é uma preocupação secundária.
+**POSIX** vem de **Portable Operating System Interface (ou “Interface Portável Entre Sistemas Operacionais”, em português)**. Então, como o próprio nome diz, o objetivo das normas POSIX é garantir a portabilidade do código. Porém, a não ser em casos raros e muito específicos, portabilidade é uma preocupação secundária.
 
-A verdade é que é muito mais comum ocorrerem problemas decorrentes de incompatibilidades entre versões do próprio Bash, códigos mal escritos, diferenças no conjunto de programas instalados por padrão no sistema base das distribuições, do que por motivos de incompatibilidade entre plataformas.
+A verdade é que, é mais comum ocorrerem problemas decorrentes de incompatibilidades entre versões do próprio Bash, códigos mal escritos, diferenças no conjunto de programas instalados por padrão no sistema base das distribuições, do que por motivos de incompatibilidade entre plataformas.
 
 Eu sei que muitos discordarão do meu ponto de vista, mas não posso deixar de pensar na criação de programas em Bash como a criação de programas em qualquer outra linguagem. Quando eu escrevo um programa em Python, eu só me preocupo com a versão disponível na plataforma de execução, não com a incompatibilidade do Python com a linguagem C, por exemplo. Até porque, em última análise, escrever programas em Bash seguindo as normas POSIX é o mesmo que escrever em outra linguagem – ou seja, um projeto que exija um código compatível com as normas POSIX será escrito no shell POSIX, não em Bash.
 
@@ -700,131 +491,130 @@ Além disso, todo shell é apenas um programa que pode ser baixado e instalado d
 
 ## 1.5 – Descobrindo o shell em execução
 
-Uma forma bastante simples de descobrir qual shell está sendo executado no seu terminal é verificando o valor armazenado na variável interna 0 (sim, este é o nome da variável).
+Uma forma bastante simples de descobrir qual shell está sendo executado no seu terminal é verificando o valor armazenado na variável interna `0` (sim, este é o nome da variável).
 
 A variável 0 faz parte de uma série de variáveis internas do shell chamadas parâmetros posicionais (mais sobre isso nos tópicos 2.3.8 e 3.9). De acordo com o contexto, ela poderá conter o nome do script ou o nome do executável do shell. Executando a expansão do seu valor na linha de comandos, nós veremos que ela contém o nome do executável do shell:
 
-Exemplo 1.18 – Descobrindo o nome do executável do shell.
+**Exemplo 1.18 – Descobrindo o nome do executável do shell.**
 
- :~$ echo $0
- bash
+![prompt](imagens/bash26.png)
 
 Mas nós podemos ir além!
 
-Existe um comando interno do shell muito interessante chamado type, cuja função é exibir informações sobre comandos. Com a opção -a, ele retorna todos os locais contendo um executável com o nome que for passado como argumento. Então, além de descobrirmos o nome do shell em execução, nós ainda podemos ver onde o seu executável está armazenado no sistema.
+Existe um comando interno do shell muito interessante chamado `type`, cuja função é exibir informações sobre comandos. Com a opção `-a`, ele retorna todos os locais contendo um executável com o nome que for passado como argumento. Então, além de descobrirmos o nome do shell em execução, nós ainda podemos ver onde o seu executável está armazenado no sistema.
 
 Observe o exemplo:
 
-Exemplo 1.19 – Descobrindo a localização do executável do shell.
+**Exemplo 1.19 – Descobrindo a localização do executável do shell.**
 
- :~$ type -a $0
- bash é /usr/bin/bash
- bash é /bin/bash
+![prompt](imagens/bash27.png)
 
-Note que o conteúdo da variável 0 foi utilizado como argumento comando type -a. Após a expansão de seu valor, que no caso era bash, o comando foi executado retornando, portanto, as duas localizações do executável bash no meu sistema.
+Note que o conteúdo da variável 0 foi utilizado como argumento comando `type -a`. Após a expansão de seu valor, que no caso era bash, o comando foi executado retornando, portanto, as duas localizações do executável bash no meu sistema.
 
-> Detalhe importante! A linha do comando do exemplo 1.19 só funciona se o shell em execução não for um shell de login, mas nós falaremos sobre isso no tópico 1.7, ainda neste capítulo.
+> **Detalhe importante!** A linha do comando do exemplo 1.19 só funciona se o shell em execução não for um shell de login, mas nós falaremos sobre isso no tópico 1.7, ainda neste capítulo.
 
 ### 1.5.1 – A variável de ambiente SHELL
 
-Diferente das variáveis internas ? e 0, as variáveis de ambiente não são necessariamente controladas pelo shell. De modo geral, nós podemos defini-las e modificá-las conforme a necessidade, e este é o caso da variável de ambiente SHELL. Suas configurações iniciais são feitas na configuração do próprio sistema operacional. Para ser mais exato, ela é definida no conjunto de configurações feitas no desenvolvimento de uma distribuição GNU/Linux (ou de qualquer outro sistema unix-like) e pode ser alterada a partir de certos procedimentos administrativos.
+Diferente das variáveis internas `?` e `0`, as variáveis de ambiente não são necessariamente controladas pelo shell. De modo geral, nós podemos defini-las e modificá-las conforme a necessidade, e este é o caso da variável de ambiente `SHELL`. Suas configurações iniciais são feitas na configuração do próprio sistema operacional. Para ser mais exato, ela é definida no conjunto de configurações feitas no desenvolvimento de uma distribuição GNU/Linux (ou de qualquer outro sistema unix-like) e pode ser alterada a partir de certos procedimentos administrativos.
 
 Para a finalidade deste tópico, porém, basta saber que nela está o nome do shell configurado como padrão para o usuário. Para ver o que ela armazena, basta executar:
 
-Exemplo 1.20 – Expandindo o shell configurado como padrão para o usuário.
+**Exemplo 1.20 – Expandindo o shell configurado como padrão para o usuário**.
 
- :~$ echo $SHELL
- /bin/bash
+![prompt](imagens/bash28.png)
 
-Eventualmente, dependendo do seu sistema operacional, pode ser que a variável SHELL nem esteja definida. Nestes casos, o shell padrão certamente será obtido a partir da leitura de um arquivo que contém informações de todos os usuários e grupos registrados no sistema: o arquivo /etc/passwd.
+Eventualmente, dependendo do seu sistema operacional, pode ser que a variável `SHELL` nem esteja definida. Nestes casos, o shell padrão certamente será obtido a partir da leitura de um arquivo que contém informações de todos os usuários e grupos registrados no sistema: o arquivo `/etc/passwd`.
+
+![prompt](imagens/bash29.png)
 
 ### 1.5.2 – Lendo o conteúdo de /etc/passwd
 
-A forma mais comum de lermos o conteúdo de arquivos é com a utilização do comando cat. Sua função é concatenar o conteúdo de arquivos e exibir o resultado no terminal – claro, se apenas um nome de arquivo for informado, somente o seu conteúdo será exibido: 
+A forma mais comum de lermos o conteúdo de arquivos é com a utilização do comando `cat`. Sua função é concatenar o conteúdo de arquivos e exibir o resultado no terminal – claro, se apenas um nome de arquivo for informado, somente o seu conteúdo será exibido: 
 
-Exemplo 1.21 – Exibindo o conteúdo de /etc/passwd com o comando ‘cat’.
+**Exemplo 1.21 – Exibindo o conteúdo de /etc/passwd com o comando cat**.
 
- :~$ cat /etc/passwd
+![prompt](imagens/bash30.png)
 
-Nós podemos utilizar o comando cat para ler o conteúdo do arquivo /etc/passwd, o problema é que ele pode ser muito grande, tornando difícil a localização de qualquer informação.
+Nós podemos utilizar o comando cat para ler o conteúdo do arquivo `/etc/passwd`, o problema é que ele pode ser muito grande, tornando difícil a localização de qualquer informação.
 
-Nesses casos, a melhor opção pode ser o comando grep, que também exibe o conteúdo de arquivos, mas permite a realização de uma filtragem segundo um padrão de busca. Descartando toda uma infinidade de possibilidades de uso do comando grep, nós podemos ver a linha relativa ao nosso usuário desta forma:
+Nesses casos, a melhor opção pode ser o comando `grep`, que também exibe o conteúdo de arquivos, mas permite a realização de uma filtragem segundo um padrão de busca. Descartando toda uma infinidade de possibilidades de uso do comando grep, nós podemos ver a linha relativa ao nosso usuário desta forma:
 
-Exemplo 1.22 – Filtrando o conteúdo de /etc/passwd com o comando ‘grep’.
+**Exemplo 1.22 – Filtrando o conteúdo de /etc/passwd com o comando ‘grep’.**
 
- :~$ grep blau /etc/passwd
- blau:x:1000:1000:Blau Araujo,,,:/home/blau:/bin/bash
+![prompt](imagens/bash31.png)
 
-Se você observar bem, a linha resultante contém vários dados separados entre si por dois pontos (:), e a última informação exibida é justamente o nosso shell padrão: /bin/bash.
+Se você observar bem, a linha resultante contém vários dados separados entre si por dois pontos (:), e a última informação exibida é justamente o nosso shell padrão: `/bin/bash`.
 
 Apenas para apresentar mais uma alternativa, nós também podemos ver qual shell está em execução com o nosso já conhecido comando ps:
 
-Exemplo 1.23 – Executando ‘ps’ para descobrir o shell em execução.
+**Exemplo 1.23 – Executando ‘ps’ para descobrir o shell em execução.**
 
- :~$ ps
-  PID TTY               TIME CMD
-  4525 pts/0         00:00:00 bash
-  5461 pts/0         00:00:00 ps
+![prompt](imagens/bash32.png)
 
 ## 1.6 – Alterando o shell
 
 Agora, se por acaso você utilizou um dos métodos do tópico anterior e acabou descobrindo que o seu shell padrão não é o Bash, não precisa se preocupar, a troca do shell é um processo relativamente simples. Obviamente, antes mesmo de pensar em trocar de shell, você precisa providenciar a instalação do Bash segundo os procedimentos descritos na documentação do seu sistema operacional (nisso eu não tenho como ajudar, desculpe). Certificando-se de que o Bash já está instalado, você pode decidir executá-lo temporariamente ou torná-lo o seu shell padrão.
 
-A primeira opção, executá-lo temporariamente, não é nenhuma novidade – nós já fizemos isso quando invocamos um shell pela linha de comandos, lá no começo deste capítulo. Também já vimos (no mesmo tópico) que a linha do interpretador de comandos, que é a primeira linha de um script executável, também fará a invocação do shell necessário para interpretar os comandos do código. Então, falta apenas vermos como tornar o Bash o nosso shell padrão, o que faremos com o comando chsh.
+A primeira opção, executá-lo temporariamente, não é nenhuma novidade – nós já fizemos isso quando invocamos um shell pela linha de comandos, lá no começo deste capítulo. Também já vimos (no mesmo tópico) que a linha do interpretador de comandos, que é a primeira linha de um script executável, também fará a invocação do shell necessário para interpretar os comandos do código. Então, falta apenas vermos como tornar o Bash o nosso shell padrão, o que faremos com o comando `chsh`.
 
 ### 1.6.1 – O comando ‘chsh’
 
-O comando chsh (Change Shell) é um utilitário desenvolvido especificamente para alterar o shell definido como padrão para um usuário. Ele pode ser executado como usuário normal, afetando apenas a configuração de sua própria conta, ou como usuário administrativo (root), quando for necessário alterar o shell de qualquer outro usuário.
+O comando `chsh` **(Change Shell)** é um utilitário desenvolvido especificamente para alterar o shell definido como padrão para um usuário. Ele pode ser executado como usuário normal, afetando apenas a configuração de sua própria conta, ou como usuário administrativo (root), quando for necessário alterar o shell de qualquer outro usuário.
 
-> Atenção! De um modo ou de outro, uma senha será solicitada: a sua, se  estiver alterando apenas o seu shell, ou a senha do usuário root, caso esteja mudando o shell de outro usuário.
+> **Atenção!** De um modo ou de outro, uma senha será solicitada: a sua, se  estiver alterando apenas o seu shell, ou a senha do usuário root, caso esteja mudando o shell de outro usuário.
 
 Supondo que você queira alterar apenas o seu shell, basta executar a linha do comando abaixo como usuário normal:
 
-chsh -s /caminho/do/shell nome_do_usuario
+- `chsh -s /caminho/do/shell nome_do_usuario`
 
 Por exemplo:
 
-Exemplo 1.24 – Alterando o seu shell padrão.
+**Exemplo 1.24 – Alterando o seu shell padrão para zsh.** 
 
- :~$ chsh -s /bin/bash blau
- :~$ Senha:
+![prompt](imagens/bash33.png)
 
 Simples assim!
 
-Você ainda pode conferir a alteração listando as configurações do seu usuário no arquivo /etc/passwd.
+Você ainda pode conferir a alteração listando as configurações do seu usuário no arquivo `/etc/passwd`. Para isso pode usar o comando `grep`.
 
 Repare que o último campo da linha é o seu shell padrão.
 
-Exemplo 1.25 – Conferindo a alteração do seu shell padrão.
+**Exemplo 1.25 – Conferindo a alteração do seu shell padrão.**
 
- :~$ grep blau /etc/passwd
- blau:x:1000:1000:Blau Araujo,,,:/home/blau:/bin/bash
+![prompt](imagens/bash34.png)
+
+> **Nota:** Volte ao shell bash para seguir com o livro.
 
 ## 1.7 – O shell de login
 
-Para ser mais exato, o que nós alteramos com o comando chsh é o chamado shell de login. Mas, de modo algum, isso significa que há dois shells diferentes. Essa designação diz respeito apenas a como uma sessão do shell é iniciada no terminal: com ou sem a solicitação das credenciais do usuário.
+Para ser mais exato, o que nós alteramos com o comando `chsh` é o chamado shell de login. Mas, de modo algum, isso significa que há dois shells diferentes. Essa designação diz respeito apenas a como uma sessão do shell é iniciada no terminal: com ou sem a solicitação das credenciais do usuário.
 
-A confusão que se faz sobre isso, provavelmente deve-se ao fato de que existem, isto sim, duas interfaces nos sistemas operacionais modernos: a interface de linha de comandos (CLI) e a interface gráfica com o usuário (GUI). Contudo, nós geralmente não percebemos que temos que nos identificar para ganhar acesso a qualquer uma delas.
+A confusão que se faz sobre isso, provavelmente deve-se ao fato de que existem, isto sim, duas interfaces nos sistemas operacionais modernos: 
 
-Quando iniciamos o sistema e caímos no chamado “modo texto”, ou quando utilizamos os atalhos Ctrl+Alt+F1 a F7 para acessar um console, o sistema executará um gerenciador de login para solicitar as nossas credenciais. Em seguida, um shell será carregado e, neste caso, ele será um shell de login. Quando isso acontece, o conteúdo da variável 0 será precedido por um traço (-):
+1. A interface de linha de comandos (CLI) 
+2. Interface gráfica com o usuário (GUI). 
 
-Exemplo 1.26 – Expandindo a variável ‘0’ em um shell de login.
+Contudo, nós geralmente não percebemos que temos que nos identificar para ganhar acesso a qualquer uma delas.
 
- :~$ echo $0
- -bash
+Quando iniciamos o sistema e caímos no chamado “modo texto”, ou quando utilizamos os atalhos **Ctrl+Alt+F1 a F7** para acessar um console, o sistema executará um gerenciador de login para solicitar as nossas credenciais. Em seguida, um shell será carregado e, neste caso, ele será um shell de login. Quando isso acontece, o conteúdo da variável `0` será precedido por um traço (-):
 
 O mesmo aconteceria, por exemplo, se estivéssemos fazendo o login em  uma sessão remota do shell através de uma conexão SSH.
 
+**Exemplo 1.26 – Expandindo a variável ‘0’ em um shell de login.**
+
+![prompt](imagens/bash35.png)
+
 Por detrás dos bastidores das interfaces gráficas, também acontece um processo semelhante – nós também temos que apresentar as nossas credenciais, mesmo quando o nosso gerenciador de display (LightDM, GDM, etc) está configurado para não solicitar uma senha. Estando na GUI, portanto, nós já estamos identificados, o que torna desnecessária (e pouco prática) uma nova solicitação de login e senha cada vez que iniciamos uma sessão do shell a partir de um terminal gráfico.
 
-Para indicar que não estamos em um shell de login, a variável 0 deixa de exibir o traço antes do nome do shell:
+Para indicar que não estamos em um shell de login, a variável `0` deixa de exibir o traço antes do nome do shell:
 
-Exemplo 1.27 – Expandindo a variável ‘0’ em um shell que não é de login.
+**Exemplo 1.27 – Expandindo a variável ‘0’ em um shell que não é de login.**
 
- :~$ echo $0
- bash
+![prompt](imagens/bash26.png)
 
-É por causa do traço incluído no início do nome do shell de login que o  comando do exemplo 1.19 (type -a $0) só funcionará se o shell não for de login.
+O mesmo aconteceria, por exemplo, se estivéssemos fazendo o login em  uma sessão remota do shell através de uma conexão SSH.
+
+> É por causa do traço incluído no início do nome do shell de login que o  comando do exemplo 1.19 `type -a $0` só funcionará se o shell não for de login.
 
 ## 1.8 – Modos de execução
 
@@ -834,20 +624,22 @@ O mais importante, porém, é que fique claro que há dois modos de iniciar o sh
 
 Quando abrimos um terminal e começamos a digitar comandos, nós estamos utilizando o shell de forma interativa. Nele, existe uma interação entre nós e o shell: nós digitamos um comando no prompt, o shell processa o comando, nos dá uma resposta, e nós pensamos e decidimos o que fazer em seguida.
 
+![prompt](imagens/bash36.png)
+
 ### 1.8.2 – Modo não-interativo
 
-Mas existe uma outra forma de trabalhar que pode ser muito útil e prática, principalmente quando precisamos automatizar a execução dos comandos: o modo não-interativo, que é, essencialmente, o que fazemos com os scripts: nós escrevemos todos os comandos em um arquivo de texto (código fonte) e mandamos o shell executar tudo que está lá a partir da invocação do nome desse arquivo.
+Mas existe uma outra forma de trabalhar que pode ser muito útil e prática, principalmente quando precisamos automatizar a execução dos comandos: **o modo não-interativo**, que é, essencialmente, o que fazemos com os **scripts:** nós escrevemos todos os comandos em um arquivo de texto (código fonte) e mandamos o shell executar tudo que está lá a partir da invocação do nome desse arquivo.
 
-As principais características dos modos interativo e não-interativo, são:
+**As principais características dos modos interativo e não-interativo, são:**
 
-- No **modo interativo**, os comandos do usuário são passados para o shell de forma direta através da entrada padrão (stdin) e todas as mensagens retornadas por um comando ou um programa são direcionadas para a saída padrão (stdout), ambas (stdin e stdout) conectadas a um terminal.
+- No **modo interativo**, os comandos do usuário são passados para o shell de forma direta através da entrada padrão **(stdin)** e todas as mensagens retornadas por um comando ou um programa são direcionadas para a saída padrão **(stdout)**, ambas **(stdin e stdout)** conectadas a um terminal.
 - O **conteúdo da variável PS1** é lido a fim de que um prompt seja exibido no modo interativo.
 - O modo **não-interativo** sempre é executado em sua própria sessão do shell, mesmo quando o script é invocado na linha de comandos.
-- Entre os caracteres relativos às opções de execução do shell, obtidos com a expansão da variável especial – (traço), o caractere i estará presente apenas no modo interativo).
+- Entre os caracteres relativos às opções de execução do shell, obtidos com a expansão da variável especial – (traço), o caractere `i` estará presente apenas no modo interativo).
 
-Geralmente não há muito com que se preocupar quando os nossos scripts executáveis em Bash são devidamente iniciados com a linha do interpretador de comandos (shebang) ou são explicitamente invocados como argumentos do executável bash. Eventualmente, porém, nós teremos que conferir uma ou outra configuração do Bash antes de contarmos com certos recursos nos nossos scripts, mas são casos bem específicos.
+Geralmente não há muito com que se preocupar quando os nossos scripts executáveis em Bash são devidamente iniciados com a linha do interpretador de comandos **(shebang)** ou são explicitamente invocados como argumentos do executável bash. Eventualmente, porém, nós teremos que conferir uma ou outra configuração do Bash antes de contarmos com certos recursos nos nossos scripts, mas são casos bem específicos.
 
-De todo modo, pelo menos no que for abordado aqui neste livro, nós faremos questão de deixar claro quando isso for necessário.
+> De todo modo, pelo menos no que for abordado aqui neste livro, nós faremos questão de deixar claro quando isso for necessário.
 
 ### 1.8.3 – Como detectar se estamos ou não no modo interativo
 
@@ -855,10 +647,9 @@ Na prática, quase sempre isto seria bastante óbvio: scripts e comandos passado
 
 Observe o exemplo:
 
-Exemplo 1.28 – Expandindo as configurações do Bash.
+**Exemplo 1.28 – Expandindo as configurações do Bash.**
 
- :~$ echo $-
- himBHs
+![prompt](imagens/bash37.png)
 
 Os caracteres expandidos aqui correspondem a diversas configurações de execução do Bash, como podemos ver na tabela abaixo:
 
@@ -875,20 +666,19 @@ Eu utilizei stdin apenas como um mnemônico, já que não há menção ao motivo
 
 Porém, no modo não-interativo...
 
-Exemplo 1.29 – Expandindo as configurações do Bash não-interativo.
+**Exemplo 1.29 – Expandindo as configurações do Bash não-interativo.**
 
- :~$ bash -c 'echo $-'
- hBc
+![prompt](imagens/bash38.png)
 
-A primeira coisa que você deve notar, é que o i não está mais entre os caracteres expandidos, e este é o principal indicador de que estamos no modo não-interativo. Por último, observe que agora existe um novo caractere: o caractere c. Isso aconteceu porque o comando echo $- foi passado como argumento do comando bash -c.
+A primeira coisa que você deve notar, é que o `i` não está mais entre os caracteres expandidos, e este é o principal indicador de que estamos no modo não-interativo. Por último, observe que agora existe um novo caractere: o caractere `c`. Isso aconteceu porque o comando `echo $-` foi passado como argumento do comando `bash -c`.
 
-Se o comando echo $- tivesse sido executado em um script, nós veríamos apenas os caracteres hB.
+Se o comando `echo $-` tivesse sido executado em um script, nós veríamos apenas os caracteres `hB`.
 
 ## 1.9 – Obtendo ajuda
 
 Como eu sempre digo: um bom programador não é aquele que tem todas as respostas na cabeça (até porque isso não existe), mas aquele que sabe onde e como encontrar rapidamente todas as respostas. Sendo assim, a principal arma no arsenal de um programador sempre serão manuais e outras formas de ajuda que a sua linguagem tenha para oferecer.
 
-Claro, os buscadores da internet e fóruns também ajudam muito, mas eu os considero como ferramentas que podem nos dar mais pistas do que efetivamente soluções – no fim das contas, as únicas informações realmente confiáveis são aquelas encontradas nos manuais.
+> Claro, os buscadores da internet e fóruns também ajudam muito, mas eu os considero como ferramentas que podem nos dar mais pistas do que efetivamente soluções – no fim das contas, as únicas informações realmente confiáveis são aquelas encontradas nos manuais.
 
 Neste aspecto, o Bash possui uma farta documentação que pode ser consultada de várias formas:
 
@@ -900,65 +690,73 @@ Neste aspecto, o Bash possui uma farta documentação que pode ser consultada de
 
 Pessoalmente, eu gosto muito do manual online, especialmente a versão em uma única página em HTML, mas você pode escolher a versão que achar melhor. As opções estão [aqui](https://www.gnu.org/software/bash/manual/).
 
+![prompt](imagens/bash39.png)
+
 ### 1.9.2 – Comando ‘man’
 
 A vantagem do comando man é que, além do manual do próprio Bash, com ele nós podemos ler a documentação de outros comandos do shell que, eventualmente, venham parar nos nossos scripts. Para ler o manual do Bash, o comando é:
 
-Exemplo 1.30 – Consultando o manual do Bash.
+**Exemplo 1.30 – Consultando o manual do Bash.**
 
- :~$ man bash
+![prompt](imagens/bash40.png)
+
+> O curioso que até ao momento, não temos as paginas de manual de comandos instaladas. 
+
+Vamos a instalação.
+
+![prompt](imagens/bash41.png)
+
+Agora podemos concluir o nosso exemplo.
+
+![prompt](imagens/bash42.png)
 
 ### 1.9.3 – Comando interno ‘help’
 
-Mas, se o que você procura é alguma informação sobre os comados internos do Bash, é possível que o comando man seja insuficiente. Para estes casos, o Bash oferece o comando interno (builtin) help...
+Mas, se o que você procura é alguma informação sobre os comados internos do Bash, é possível que o comando `man` seja insuficiente. Para estes casos, o Bash oferece o comando interno (builtin) `help`...
 
-Exemplo 1.31 – O comando interno ‘help’.
+**Exemplo 1.31 – O comando interno ‘help’.**
 
-:~$ help [opções] [comando_builtin]
+- `help [opções] [comando_builtin]`
 
 Sem o parâmetro opcional comando_builtin, o comando help exibirá uma lista com todos os comandos para os quais ele oferece ajuda (todos builtin).
 
-Por padrão, ele exibirá as informações sobre o comando pesquisado na forma de uma “pseudo-manpage” (que apenas imita o estilo de uma página exibida pelo comando man). Este mesmo comportamento pode ser conseguido com a opção -m. Experimente:
+Por padrão, ele exibirá as informações sobre o comando pesquisado na forma de uma “pseudo-manpage” (que apenas imita o estilo de uma página exibida pelo comando man). Este mesmo comportamento pode ser conseguido com a `opção -m`. Experimente:
 
-Exemplo 1.32 – Exibindo a ajuda completa.
+**Exemplo 1.32 – Exibindo a ajuda completa.**
 
-:~$ help -m help
+![prompt](imagens/bash43.png)
 
-Se o que você procura é apenas uma breve descrição de um comando builtin, basta utilizar a opção -d:
+Se o que você procura é apenas uma breve descrição de um comando builtin, basta utilizar a `opção -d`:
 
-Exemplo 1.33 – Exibindo apenas a descrição do comando interno.
+**Exemplo 1.33 – Exibindo apenas a descrição do comando interno.**
 
- :~$ help -d help
- help - Display information about builtin commands.
+![prompt](imagens/bash44.png)
 
-Mas, se o que você quer ver é a sintaxe do comando, utilize a opção -s:
+Mas, se o que você quer ver é a sintaxe do comando, utilize a `opção -s`:
 
-Exemplo 1.34 – Exibindo apenas a sintaxe do comando interno.
+**Exemplo 1.34 – Exibindo apenas a sintaxe do comando interno.**
 
- :~$ help -s help
- help: help [-dms] [PADRÃO …]
+![prompt](imagens/bash45.png)
 
 Aliás, repare que a sintaxe retornada pelo comando acima fala de um PADRÃO, porque o help tentará encontrar os tópicos de ajuda que correspondam aos primeiros caracteres passados como parâmetro.
 
 Por exemplo:
 
-Exemplo 1.35 – Exibindo ajuda de comandos que começam com ‘comp’.
+**Exemplo 1.35 – Exibindo ajuda de comandos que começam com ‘comp’.**
 
- :~$ help -d comp
- compgen - Display possible completions [...]
- complete - Specify how arguments are to be [...]
- compopt - Modify or display completion [...]
+![prompt](imagens/bash46.png)
 
 ### 1.9.4 – Descobrindo se o comando é ou não é builtin
 
 Talvez não seja a melhor forma, mas o comando help também pode nos ajudar a descobrir se um comando é ou não é builtin. A ideia é simples: se ele retornar um erro, significa que o nome informado não é um comando interno do Bash.
 
-Exemplo 1.36 – Testando se o comando ‘ls’ é builtin.
+**Exemplo 1.36 – Testando se o comando ‘ls’ é builtin.**
 
- :~$ help ls
- bash: help: nenhum tópico de ajuda corresponde a `ls'. [...]
+ - `help ls`
+ 
+ ![prompt](imagens/bash47.png)
 
-Um detalhe importante: supondo que ainda não sabemos se o que  estamos testando é um comando ou um programa utilitário durante os  nossos experimentos, vamos chamá-los todos apenas de “comandos”.
+> **Um detalhe importante:** supondo que ainda não sabemos se o que  estamos testando é um comando ou um programa utilitário durante os  nossos experimentos, vamos chamá-los todos apenas de “comandos”.
 
 Perceba que aquilo que chamamos de “comando ls” (utilizado para listar arquivos e pastas) é um utilitário do sistema operacional GNU, mas não é um builtin do Bash. Por isso, o comando help retornou um erro.
 
@@ -966,22 +764,21 @@ Mas, lembre-se: o shell sempre retorna um valor correspondente ao estado de saí
 
 ### 1.9.5 – Redirecionando mensagens e capturando estados de saída
 
-Em geral, mensagens de erro são muito úteis no modo interativo, mas não costumam ajudar muito nos nossos scripts (modo não-interativo). Nós já vimos que o estado de saída do último comando executado fica armazenado na variável especial ?, mas ainda falta entender um pouco melhor como as mensagens de erro vão parar no terminal.
+Em geral, mensagens de erro são muito úteis no modo interativo, mas não costumam ajudar muito nos nossos scripts (modo não-interativo). Nós já vimos que o estado de saída do último comando executado fica armazenado na variável especial `?`, mas ainda falta entender um pouco melhor como as mensagens de erro vão parar no terminal.
 
 Quando o shell é iniciado, ele recebe acesso a três fluxos de dados:
 
-- Fluxo de entrada, ou entrada padrão (stdin);
-- Fluxo de saída, ou saída padrão (stdout);
-- Fluxo de erros, ou saída padrão de erros (stderr).
+- Fluxo de entrada, ou entrada padrão **(stdin);**
+- Fluxo de saída, ou saída padrão **(stdout);**
+- Fluxo de erros, ou saída padrão de erros **(stderr);**
 
-Por padrão, o fluxo de entrada espera a digitação de dados pelo teclado, o fluxo de saída é apresentado no terminal, e o fluxo da saída de erros está conectado com a saída padrão, fazendo com que as mensagens de erro também sejam exibidas no terminal.
+Por padrão, **o fluxo de entrada** espera a digitação de dados pelo teclado, **o fluxo de saída** é apresentado no terminal, e **o fluxo da saída de erros** está conectado com a saída padrão, fazendo com que as mensagens de erro também sejam exibidas no terminal.
 
-Como tudo nos sistemas unix-like é tratado como arquivo, esses três fluxos não podem fugir à regra. Eles estão na pasta /dev/fd com os nomes 0, 1 e 2:
+Como tudo nos sistemas unix-like é tratado como arquivo, esses três fluxos não podem fugir à regra. Eles estão na pasta `/dev/fd` com os nomes `0, 1 e 2:`.
 
-Exemplo 1.37 – Localizando os fluxos de dados ‘0’, ‘1’ e ‘2’.
+**Exemplo 1.37 – Localizando os fluxos de dados ‘0’, ‘1’ e ‘2’.**
 
- :~$ ls /dev/fd
- 0    1    2...
+![prompt](imagens/bash48.png)
 
 Onde...
 
@@ -989,100 +786,95 @@ Onde...
 - 1 é a saída padrão;
 - 2 é a saída padrão de erros.
 
-Sendo ainda mais preciso, 0, 1 e 2, bem como todos os arquivos na pasta  /dev/fd, são chamados de “descritores de arquivos” (“file descriptors”, em inglês, dai o nome da pasta, fd).
+Sendo ainda mais preciso, **0, 1 e 2**, bem como todos os arquivos na pasta  `/dev/fd`, são chamados de “descritores de arquivos” (“file descriptors”, em inglês, dai o nome da pasta, fd).
 
-A coisa mais interessante, porém, é que esses fluxos de dados podem ser redirecionados, o que nos permite desviar dados, que normalmente iriam para a saída padrão, para arquivos, por exemplo, e isso é feito com os chamados operadores de redirecionamento.
+A coisa mais interessante, porém, é que esses fluxos de dados podem ser redirecionados, o que nos permite desviar dados, que normalmente iriam para a saída padrão, para arquivos, por exemplo, e isso é feito com os chamados operadores de **redirecionamento**.
 
-O capítulo 5 será dedicado integralmente aos redirecionamentos de fluxos de dados, mas nós podemos começar a utilizar este incrível recurso desde já, especialmente os operadores de redirecionamento para arquivos > e >>.
+O capítulo 5 será dedicado integralmente aos redirecionamentos de fluxos de dados, mas nós podemos começar a utilizar este incrível recurso desde já, especialmente os operadores de redirecionamento para arquivos `>` e `>>`.
 
-O operador de redirecionamento > desvia o fluxo de dados da saída padrão para um arquivo qualquer. Se o arquivo existir, seu conteúdo será apagado e os dados da saída padrão serão escritos nele. Por outro lado, caso o arquivo não exista, ele será criado e a escrita será feita.
+O operador de redirecionamento `>` desvia o fluxo de dados da saída padrão para um arquivo qualquer. Se o arquivo existir, seu conteúdo será apagado e os dados da saída padrão serão escritos nele. Por outro lado, caso o arquivo não exista, ele será criado e a escrita será feita.
 
-Vamos elaborar um exemplo bem simples e objetivo com o comando echo. Como vimos, ele exibe no terminal a string que ele receber como argumento. Se ele exibe no terminal, isso quer dizer que ele envia os dados (a string, no caso) para a saída padrão! Logo, nós podemos utilizá-lo no nosso exemplo:
+Vamos elaborar um exemplo bem simples e objetivo com o comando `echo`. Como vimos, ele exibe no terminal a string que ele receber como argumento. Se ele exibe no terminal, isso quer dizer que ele envia os dados (a string, no caso) para a saída padrão! Logo, nós podemos utilizá-lo no nosso exemplo:
 
-Exemplo 1.38a – Redirecionando a saída do comando ‘echo’ para um arquivo.
+**Exemplo 1.38a – Redirecionando a saída do comando ‘echo’ para um arquivo.**
 
- :~$ echo 'Olá, mundo!' > teste.txt
- :~$
+- `echo 'Olá, mundo!' > teste.txt`
 
-Repare que nada foi exibido desta vez, porque todos os dados que iriam para a saída padrão foram redirecionados para o arquivo teste.txt. Para conferir se foi isso mesmo que aconteceu, vamos utilizar o comando cat:
+![prompt](imagens/bash49.png)
 
-Exemplo 1.38b – Conferindo o conteúdo de ‘teste.txt’.
+Repare que nada foi exibido desta vez, porque todos os dados que iriam para a saída padrão foram redirecionados para o arquivo **teste.txt**. Para conferir se foi isso mesmo que aconteceu, vamos utilizar o comando `cat`:
 
- :~$ cat teste.txt
- Olá, mundo!
+**Exemplo 1.38b – Conferindo o conteúdo de ‘teste.txt’.**
 
+- `cat teste.txt`
+
+![prompt](imagens/bash50.png)
 
 No próximo capítulo nós veremos como utilizar o operador de  redirecionamento para arquivos para criar os arquivos dos nossos scripts.
 
-Por padrão, o operador de redirecionamento para arquivos captura os dados na saída padrão, cujo arquivo na pasta /dev/fd é 1. Por este motivo, o número é omitido no comando. Mas nós podemos utilizar o mesmo operador para redirecionar o fluxo de dados da saída de erros (arquivo 2), o que faremos utilizando como exemplo o erro que encontramos quando executamos o comando help ls:
+Por padrão, o operador de redirecionamento para arquivos captura os dados na saída padrão, cujo arquivo na pasta `/dev/fd` é 1. Por este motivo, o número é omitido no comando. Mas nós podemos utilizar o mesmo operador para redirecionar o fluxo de dados da saída de erros (arquivo 2), o que faremos utilizando como exemplo o erro que encontramos quando executamos o `comando help ls`:
 
-Exemplo 1.39 – Redirecionando a saída de erros para o arquivo .
+**Exemplo 1.39 – Redirecionando a saída de erros para o arquivo .**
 
- :~$ help ls 2> teste.txt
- :~$ cat teste.txt
- bash: help: nenhum tópico de ajuda corresponde a `ls'...
+ - `help ls 2> teste.txt`
+ 
+Novamente, nada foi exibido na saída padrão – tudo foi redirecionado para o arquivo **teste.txt**, o que nós pudemos conferir, na sequência, com o comando `cat`.
 
-Novamente, nada foi exibido na saída padrão – tudo foi redirecionado para o arquivo teste.txt, o que nós pudemos conferir, na sequência, com o comando cat.
+![prompt](imagens/bash51.png)
 
-Este recurso é muito útil quando queremos redirecionar mensagens de erro para um arquivo de log, mas não com este operador. Como vimos, o operador > apaga o conteúdo do arquivo antes de escrever qualquer coisa nele. Para manter as mensagens anteriores em um log, nós precisamos do operador de redirecionamento >>, que faz a inserção dos dados no final do arquivo – o que nós chamamos de append.
+Este recurso é muito útil quando queremos redirecionar mensagens de erro para um arquivo de log, mas não com este operador. Como vimos, o operador `>` apaga o conteúdo do arquivo antes de escrever qualquer coisa nele. Para manter as mensagens anteriores em um log, nós precisamos do operador de redirecionamento `>>`, que faz a inserção dos dados no final do arquivo – o que nós chamamos de **append**.
 
-Então, aproveitando que o nosso arquivo teste.txt já tem uma saída do erro anterior registrada, nós podemos fazer um append de novos erros da forma abaixo:
+Então, aproveitando que o nosso arquivo teste.txt já tem uma saída do erro anterior registrada, nós podemos fazer um **append** de novos erros da forma abaixo:
 
-Exemplo 1.40a – Criando um arquivo de log.
+**Exemplo 1.40a – Criando um arquivo de log.**
 
- :~$ help mkdir 2>> teste.txt
+ - `help mkdir 2>> teste.txt`
+
+![prompt](imagens/bash52.png)
 
 O que podemos também conferir com o comando cat...
 
-Exemplo 1.40b – Conferindo o arquivo de log.
+**Exemplo 1.40b – Conferindo o arquivo de log.**
 
- :~$ cat teste.txt
- bash: help: nenhum tópico de ajuda corresponde a `ls'...
- bash: help: nenhum tópico de ajuda corresponde a `mkdir'...
+![prompt](imagens/bash53.png)
 
 ### 1.9.6 – Enviando saídas para o limbo
 
 Às vezes, porém, não nos interessa registrar mensagens de erro – nós só queremos nos livrar delas. Para isso, o GNU/Linux conta com um arquivo especial que eu costumo chamar brincando de “o limbo do sistema operacional”, que é o arquivo /dev/null, cuja característica mais relevante para nós é o fato dele descartar qualquer coisa que seja escrita nele.
 
-Em sistemas unix-like, ele é chamado de dispositivo nulo, e é disso que  consiste a sua principal utilidade.
+Em sistemas unix-like, ele é chamado de dispositivo nulo, e é disso que consiste a sua principal utilidade.
 
-Ainda utilizando o comando help (afinal, nós ainda queremos utilizá-lo para determinar se um comando é ou não é builtin), nós podemos descartar a mensagem redirecionando a saída padrão de erros para /dev/null:
+Ainda utilizando o comando help (afinal, nós ainda queremos utilizá-lo para determinar se um comando é ou não é builtin), nós podemos descartar a mensagem redirecionando a saída padrão de erros para `/dev/null`:
 
-Exemplo 1.41 – Desviando a saída de erros para /dev/null.
+**Exemplo 1.41 – Desviando a saída de erros para /dev/null.**
 
- :~$ help -d ls 2> /dev/null
- :~$
+- `help -d ls 2> /dev/null`
+
+![prompt](imagens/bash54.png)
 
 Neste caso, apenas as mensagens na saída padrão seriam exibidas:
 
-Exemplo 1.42 – O que acontece quando não há erros.
+**Exemplo 1.42 – O que acontece quando não há erros.**
 
- :~$ help -d help 2> /dev/null
- help - Display information about builtin commands.
+- `help -d help 2> /dev/null`
 
-Mas nós também podemos redirecionar ambas as saídas ao mesmo tempo para o dispositivo nulo. Para isso, nós utilizamos o operador de redirecionamento &>:
+![prompt](imagens/bash55.png)
 
-Exemplo 1.43 – Redirecionando stdout e stderr para /dev/null.
+Mas nós também podemos redirecionar ambas as saídas ao mesmo tempo para o dispositivo nulo. Para isso, nós utilizamos o operador de redirecionamento `&>`:
 
- :~$ help -d help &> /dev/null
- :~$ help -d ls &> /dev/null
- :~$
+**Exemplo 1.43 – Redirecionando stdout e stderr para /dev/null.**
+
+![prompt](imagens/bash56.png)
 
 Deste modo, nada é exibido e nós podemos verificar o estado de saída do comando para sabermos se ele terminou com sucesso ou com erro:
 
-Exemplo 1.44 – Testando se um comando é ou não é builtin.
+**Exemplo 1.44 – Testando se um comando é ou não é builtin.**
 
- :~$ help -d help &> /dev/null
- :~$ echo $?
- 0
- :~$ help -d ls &> /dev/null
-
-:~$ echo $?
-1
+![prompt](imagens/bash57.png)
 
 Como já dissemos em notas anteriores, o estado de saída de comandos é a base de toda a lógica condicional da programação no Bash. O shell não estabelece conceitos ou formas de expressar valores booleanos para falso ou verdadeiro, a não ser por analogia.
 
-Nós podemos considerar um estado de saída de erro como falso, mas o erro sempre será uma condição resultante da avaliação da execução de um comando. Aliás, este é o ponto que devemos ter sempre em mente quando programamos em shell: tudo são comandos.
+Nós podemos considerar um estado de saída de erro como falso, mas o erro sempre será uma condição resultante da avaliação da execução de um comando. Aliás, este é o ponto que devemos ter sempre em mente quando programamos em shell: **tudo são comandos**.
 
 # 2 – O Bash como linguagem de programação.
 
@@ -1092,7 +884,7 @@ Sem dúvida, um script pode ser muitas coisas: desde um arquivo contendo uma sé
 
 De todo modo, o ponto é que o termo “script” só é utilizado para diferenciar programas que são executados diretamente a partir da sua forma binária6 daqueles que dependem de um intermediário para interpretar as instruções escritas no código.
 
-No frigir dos ovos, isso não passa de uma forma coloquial de distinguir os programas que precisam ser compilados dos programas que são interpretados.
+> No frigir dos ovos, isso não passa de uma forma coloquial de distinguir os programas que precisam ser compilados dos programas que são interpretados.
 
 Neste capítulo, nós tentaremos entender melhor o que é um programa, o que pode ser feito em Bash e o que ele pode nos oferecer como linguagem de programação. Nosso objetivo principal e fazer uma apresentação geral dos conceitos, estruturas e elementos que podem ser encontrados na maioria das linguagens, observar como eles são tratados em Bash, e fornecer as bases necessárias para que você seja capaz de se desenvolver como um programador que compreende as nuances do bashismo.
 
@@ -1121,14 +913,17 @@ Já nas linguagens interpretadas, o código fonte não passa por nenhuma transfo
 
 Exemplo 2.1 – Executando programas interpretados na linha de comandos.
 
- # Executando um script em PHP...
- :~$ php script.php
+- **Executando um script em PHP...**
 
- # Executando um script em Python...
- :~$ python script.py
+![prompt](imagens/bash58.png)
 
- # Executando um script em Bash...
- :~$ bash script.sh
+- **Executando um script em Python...**
+
+![prompt](imagens/bash59.png)
+
+- **Executando um script em Bash...**
+
+![prompt](imagens/bash60.png)
 
 A principal diferença em relação às outras linguagens interpretadas é que, sendo o shell do sistema operacional, o Bash já está carregado e só precisa ser copiado para outra área da memória quando um script é executado. Os interpretadores, porém, terão obrigatoriamente que ser copiados de um dispositivo de armazenamento qualquer (um disco, por exemplo), carregados na memória, e só então poderão fazer o seu trabalho de interpretar códigos. 
 
@@ -1167,13 +962,7 @@ Exemplo 2.3 – Testando estados de saída com ‘if’.
       echo 'erro'
  fi
 
-O que nos leva a deduzir, por observação, que a parte que está entre
-colchetes duplos ([[ ]]) no exemplo 2.2 também é um comando! Em
-ambos os exemplos, o papel do if é acompanhar o estado de saída do
-comando executado e dirigir o fluxo do programa para o bloco de
-comandos que corresponda ao caso: then → sucesso ou else → erro.
-60                          Pequeno Manual do Programador GNU/Bash
-
+O que nos leva a deduzir, por observação, que a parte que está entre colchetes duplos ([[ ]]) no exemplo 2.2 também é um comando! Em ambos os exemplos, o papel do if é acompanhar o estado de saída do comando executado e dirigir o fluxo do programa para o bloco de comandos que corresponda ao caso: then → sucesso ou else → erro.
 
  O comando composto [[ ]] avalia expressões condicionais, tal como o
  comando interno test, que veremos mais adiante ainda neste capítulo.
@@ -1186,35 +975,17 @@ Outro bom exemplo de como funciona a “lógica” do Bash está nos
 operadores de controle, especialmente os dois mais populares, && e ||,
 utilizados no encadeamento condicional de comandos.
 
+### 2.1.3 – Operadores de controle
 
-2.1.3 – Operadores de controle
-Geralmente, a primeira palavra da linha de um comando simples (para
-diferenciar dos comandos compostos) corresponde ao comando (ou pro-
-grama) a ser executado. Em seguida, se houver, podem vir os argumen-
-tos e, por fim, sempre teremos um operador de controle, sem o qual, o
-comando não será executado.
+Geralmente, a primeira palavra da linha de um comando simples (para diferenciar dos comandos compostos) corresponde ao comando (ou programa) a ser executado. Em seguida, se houver, podem vir os argumentos e, por fim, sempre teremos um operador de controle, sem o qual, o comando não será executado.
 
-No Bash, o operador de controle padrão é a quebra de linha (gerada
-quando teclamos Enter no terminal, por exemplo), mas ele não é o
-único. Por exemplo, tanto no terminal quanto nos scripts, é possível
-escrever vários comandos em uma mesma linha utilizando o ponto e
-vírgula (;) para separá-los – para a alegria dos programadores em C e
-PHP!
+No Bash, o operador de controle padrão é a quebra de linha (gerada quando teclamos Enter no terminal, por exemplo), mas ele não é o único. Por exemplo, tanto no terminal quanto nos scripts, é possível escrever vários comandos em uma mesma linha utilizando o ponto e vírgula (;) para separá-los – para a alegria dos programadores em C e PHP!
 
-Sendo assim, a ocorrência de um operador de controle ; indica para o
-shell que o comando deve ser executado, tal como se tivéssemos teclado
-um Enter, e que ainda pode haver outro comando encadeado na se-
-quência...
-
+Sendo assim, a ocorrência de um operador de controle ; indica para o shell que o comando deve ser executado, tal como se tivéssemos teclado um Enter, e que ainda pode haver outro comando encadeado na sequência...
 
 Comando 1; Comando 2; …; Comando n
 
-Neste caso, ou com quebras de linha em um script, todos os comandos
-subsequentes são executados síncrona e incondicionalmente, ou seja, a
-2 – O Bash como linguagem de programação                                 61
-
-despeito do estado de saída do comando anterior, o comando seguinte
-aguardará seu término e será executado.
+Neste caso, ou com quebras de linha em um script, todos os comandos subsequentes são executados síncrona e incondicionalmente, ou seja, a despeito do estado de saída do comando anterior, o comando seguinte aguardará seu término e será executado.
 
  Aliás, quando se chega de uma vida de experiência na programação em
  linguagens como C e PHP, é muito comum sair terminando as linhas dos
@@ -1224,53 +995,30 @@ aguardará seu término e será executado.
  dos “bashistas”. Em vez disso, leve na brincadeira e tente assimilar e
  praticar as particularidades do Bash.
 
+### 2.1.4 – Executando comandos em segundo plano
 
-
-2.1.4 – Executando comandos em segundo plano
-Um outro operador de controle que encadeia uma série de comandos
-incondicionalmente é o &, também chamado de operador de comandos
-assíncronos.
-
+Um outro operador de controle que encadeia uma série de comandos incondicionalmente é o &, também chamado de operador de comandos assíncronos.
 
 Comando 1 & Comando 2
 
-Com ele, o segundo comando não espera o término do primeiro para ser
-executado. Neste caso, o primeiro comando é executado em outra
-sessão do shell (um subshell) e, para todos os efeitos, do ponto de vista
-do fluxo normal de execução, é como se ele tivesse sido encerrado com
-estado de saída de sucesso (0).
+Com ele, o segundo comando não espera o término do primeiro para ser executado. Neste caso, o primeiro comando é executado em outra sessão do shell (um subshell) e, para todos os efeitos, do ponto de vista do fluxo normal de execução, é como se ele tivesse sido encerrado com estado de saída de sucesso (0).
 
  Como não há nada a ser avaliado quanto ao estado de saída de um
  comando que é executado assincronamente (ou, “em background”, como
  se diz coloquialmente), o comando seguinte não precisa estar na mesma
  linha.
 
+### 2.1.5 – Encadeando comandos condicionalmente
 
-
-2.1.5 – Encadeando comandos condicionalmente
-De volta ao que falávamos sobre a lógica no Bash, os operadores de
-controle && (e) e || (ou) são utilizados para encadear comandos de forma
-condicionada aos seus estados de saída. Por exemplo:
-62                            Pequeno Manual do Programador GNU/Bash
+De volta ao que falávamos sobre a lógica no Bash, os operadores de controle && (e) e || (ou) são utilizados para encadear comandos de forma condicionada aos seus estados de saída. Por exemplo:
 
 Exemplo 2.4a – Condicionando a execução de comandos numa lista.
 
  :~$ true && echo 'sucesso' || echo 'erro'
 
-O comando interno true, utilizado no exemplo, só tem semelhança com
-o valor booleano literal true no nome. Sua finalidade é não fazer nada
-além de ser executado e sair com sucesso. Seu irmão malvado, o
-comando interno false, por sua vez, sempre termina com estado de
-saída de erro quando executado. Portanto, temos três comandos nesta
-lista encadeada, mas apenas dois deles serão executados. Quem decide
-isso são os operadores condicionais && e || a partir do estado de saída
-do comando testado.
+O comando interno true, utilizado no exemplo, só tem semelhança com o valor booleano literal true no nome. Sua finalidade é não fazer nada além de ser executado e sair com sucesso. Seu irmão malvado, o comando interno false, por sua vez, sempre termina com estado de saída de erro quando executado. Portanto, temos três comandos nesta lista encadeada, mas apenas dois deles serão executados. Quem decide isso são os operadores condicionais && e || a partir do estado de saída do comando testado.
 
-Caso o comando true termine com sucesso (e ele sempre termina com
-sucesso), o comando que vier após o operador && será executado e a
-mensagem sucesso será exibida. Caso contrário, só o comando que vier
-após o operador || será executado, causando a exibição da mensagem
-erro.
+Caso o comando true termine com sucesso (e ele sempre termina com sucesso), o comando que vier após o operador && será executado e a mensagem sucesso será exibida. Caso contrário, só o comando que vier após o operador || será executado, causando a exibição da mensagem erro.
 
 Observe:
 
@@ -1281,12 +1029,9 @@ Exemplo 2.4b – Condicionando a execução de comandos numa lista.
  :~$ false && echo 'sucesso' || echo 'erro'
  erro
 
-De certa forma, o funcionamento dos operadores && e || pode ser
-comparado ao de uma estrutura condicional if, mas existem algumas
-diferenças importantes.
+De certa forma, o funcionamento dos operadores && e || pode ser comparado ao de uma estrutura condicional if, mas existem algumas diferenças importantes.
 
 Por exemplo:
-2 – O Bash como linguagem de programação                              63
 
 Exemplo 2.5 – Diferença entre o ‘if’ e os operadores ‘&&’ e ‘||’. 8
 
@@ -1296,12 +1041,7 @@ Exemplo 2.5 – Diferença entre o ‘if’ e os operadores ‘&&’ e ‘||’.
  :~$ if true; then echo 'A'; false else echo 'B'; fi
  A
 
-Como podemos ver, a primeira linha fez com que tanto A quanto B
-fossem exibidos, ao passo que a segunda, com o comando composto if,
-causou a exibição apenas da string A. O problema aqui é que, no
-primeiro caso, estamos lidando com dois operadores, enquanto que, no
-segundo, nós temos uma estrutura que delimita blocos de comandos. De
-fato, a primeira linha equivaleria a isso:
+Como podemos ver, a primeira linha fez com que tanto A quanto B fossem exibidos, ao passo que a segunda, com o comando composto if, causou a exibição apenas da string A. O problema aqui é que, no primeiro caso, estamos lidando com dois operadores, enquanto que, no segundo, nós temos uma estrutura que delimita blocos de comandos. De fato, a primeira linha equivaleria a isso:
 
 
  :~$ true && echo 'A'
@@ -1309,49 +1049,28 @@ fato, a primeira linha equivaleria a isso:
  :~$ false || echo 'B'
  B
 
-Em termos mais tecnicamente precisos, os operadores && e || são
-binários, ou seja, são operadores que trabalham com apenas dois
-termos: o comando testado e o comando que será executado caso a
-condição representada pelo operador seja atendida. Veja este outro
-exemplo:
+Em termos mais tecnicamente precisos, os operadores && e || são binários, ou seja, são operadores que trabalham com apenas dois termos: o comando testado e o comando que será executado caso a condição representada pelo operador seja atendida. Veja este outro exemplo:
 
 Exemplo 2.6 – Os operadores de controle condicional são binários!
 
  :~$ true && false || echo 'Olha eu aqui!'
  Olha eu aqui!
 
-Aqui, true termina com sucesso e executa o comando false que, por sua
-vez, sempre termina com erro, causando a execução do comando echo.
-Como os operadores são binários, a linha do exemplo equivale às duas
-linhas abaixo:
+Aqui, true termina com sucesso e executa o comando false que, por sua vez, sempre termina com erro, causando a execução do comando echo. Como os operadores são binários, a linha do exemplo equivale às duas linhas abaixo:
 
-8   Meu muito obrigado ao amigo e conspirador André Amaral por este
-    exemplo.
-64                              Pequeno Manual do Programador GNU/Bash
-
+> Meu muito obrigado ao amigo e conspirador André Amaral por este exemplo.
 
  :~$ true && false
  :~$ false || echo 'Olha eu aqui!'
  Olha eu aqui!
 
-Para nunca mais se esquecer dessa ideia, a minha sugestão é que você
-pense das seguintes formas:
+Para nunca mais se esquecer dessa ideia, a minha sugestão é que você pense das seguintes formas:
 
-     •   Comando composto “if”: se o comando testado terminar com
-         sucesso, execute o “bloco then”; caso contrário, execute o “bloco
-         else”.
+- Comando composto “if”: se o comando testado terminar com sucesso, execute o “bloco then”; caso contrário, execute o “bloco else”.
+- Operador de controle “&&”: se o comando testado terminar com sucesso, execute “o comando seguinte” – pronto!
+- Operador de controle “||”: se o comando testado terminar com erro, execute “o comando seguinte” – pronto!
 
-     •   Operador de controle “&&”: se o comando testado terminar
-         com sucesso, execute “o comando seguinte” – pronto!
-
-     •   Operador de controle “||”: se o comando testado terminar
-         com erro, execute “o comando seguinte” – pronto!
-
-Outro detalhe importante é que, sendo binários, os operadores && e ||
-exigem que, pelo menos, o termo da esquerda (o comando a ser
-testado) esteja presente na linha de comando, ou teremos um erro de
-sintaxe no interpretador de comandos. O exemplo abaixo provocaria
-esse tipo de erro:
+Outro detalhe importante é que, sendo binários, os operadores && e || exigem que, pelo menos, o termo da esquerda (o comando a ser testado) esteja presente na linha de comando, ou teremos um erro de sintaxe no interpretador de comandos. O exemplo abaixo provocaria esse tipo de erro:
 
 Exemplo 2.7a – ‘&&’ e ‘||’ exigem o termo da esquerda!
 
@@ -1369,9 +1088,6 @@ Exemplo 2.7b – Comandos após ‘&&’ e ‘||’ podem estar em outra linha!
  true &&
  echo 'ok' ||
  echo 'não ok'
-2 – O Bash como linguagem de programação                               65
-
-
 
 # Saída: 'ok'
 
@@ -1381,15 +1097,9 @@ echo 'ok'
 
 # Saída: 'ok'
 
-Quando o segundo termo dos operadores && e || não está na mesma
-linha, a próxima linha que contiver um comando será executada (ou não)
-de acordo com a condição especificada e o estado de saída do comando
-testado. Sendo assim, true && e false || habilitam a execução do
-comando seguinte, enquanto true || e false && impedem. Para
-entender melhor a “lógica” dos operadores de controle condicional.
+Quando o segundo termo dos operadores && e || não está na mesma linha, a próxima linha que contiver um comando será executada (ou não) de acordo com a condição especificada e o estado de saída do comando testado. Sendo assim, true && e false || habilitam a execução do comando seguinte, enquanto true || e false && impedem. Para entender melhor a “lógica” dos operadores de controle condicional. 
 
 Observe como as linhas do exemplo 2.7b foram processadas:
-
 
 true && --------> (sucesso) pode executar.
 echo 'ok' || ---> (sucesso) não pode executar.
@@ -1411,7 +1121,6 @@ echo 'ok'             mas esta linha também não pôde
 
 O exemplo abaixo ilustra como é fácil cometer erros quando ignoramos
 a lógica dos operadores de controle condicional:
-66                              Pequeno Manual do Programador GNU/Bash
 
 Exemplo 2.8 – Cuidado com a lógica dos operadores ‘&&’ e ‘||’!
 
@@ -1421,83 +1130,34 @@ Exemplo 2.8 – Cuidado com a lógica dos operadores ‘&&’ e ‘||’!
 
  # Saída: 'ok' e 'não ok'!
 
+### 2.1.6 – Classificações do Bash como linguagem de programação
 
-2.1.6 – Classificações do Bash como linguagem de programação
-Para aplacar a inquietação daqueles que precisam categorizar tudo para
-poderem dormir mais tranquilos (como eu), vejamos como o Bash pode
-ser classificado no espectro dos principais conceitos que caracterizam
-uma linguagem de programação.
+Para aplacar a inquietação daqueles que precisam categorizar tudo para poderem dormir mais tranquilos (como eu), vejamos como o Bash pode ser classificado no espectro dos principais conceitos que caracterizam uma linguagem de programação.
 
-Brincadeiras à parte, todas essas classificações refletem os principais
-estilos e técnicas que podemos aprender e aplicar na programação em
-cada linguagem, e o Bash, embora altamente flexível neste aspecto,
-também possui seus estilos e técnicas.
+Brincadeiras à parte, todas essas classificações refletem os principais estilos e técnicas que podemos aprender e aplicar na programação em cada linguagem, e o Bash, embora altamente flexível neste aspecto, também possui seus estilos e técnicas.
 
 De forma resumida, podemos dizer que o Bash é uma linguagem...
 
-     •   De propósito geral: uma linguagem que pode ser utilizada na
-         criação de uma vasta gama de aplicações.
+- **De propósito geral:** uma linguagem que pode ser utilizada na criação de uma vasta gama de aplicações.
+- **Interpretada:** é o interpretador de comandos que executa as instruções escritas no código.
+- **De alto nível:** oferece uma sintaxe que se aproxima mais das linguagens humanas do que da linguagem da máquina.
+- **Procedural (ou imperativa):** o código especifica os passos que devem ser executados para a realização do objetivo desejado.
+- **Estruturada:** o código é escrito com ênfase em sequências de instruções (comandos), decisões e iterações (laços de repetição, ou loops).
+- **De tipagem indeterminada:** o Bash só trabalha com dados do tipo string e inteiro (números sem casas decimais), mas não faz distinção entre eles até que sejam utilizados em algum contexto, o que, de certa forma, também pode enquadrá-lo na categoria das linguagens de tipagem dinâmica.
 
-     •   Interpretada: é o interpretador de comandos que executa as
-         instruções escritas no código.
+Apesar de trabalhar apenas com strings e inteiros, outros tipos de dados podem ser utilizados através dos comandos e programas utilitários que entrarem nos nossos códigos.
 
-     •   De alto nível: oferece uma sintaxe que se aproxima mais das
-         linguagens humanas do que da linguagem da máquina.
+Sendo uma linguagem de propósito geral, o Bash permite a criação de programas para as mais diversas finalidades, desde pequenos scripts de automação para tarefas diárias até a criação de programas bem mais complexos.
 
-     •   Procedural (ou imperativa): o código especifica os passos que
-         devem ser executados para a realização do objetivo desejado.
+O que não deve ser esquecido, porém, é o fato de que, quanto mais complexo, mais os programas escritos em Bash dependerão de outros programas especializados para as tarefas não cobertas nativamente pelos recursos do shell. Em princípio, isso não representa problema algum – afinal, toda a Filosofia Unix se baseia na criação de sistemas complexos a partir de pequenas ferramentas especializadas capazes de trocar dados entre si.
 
-     •   Estruturada: o código é escrito com ênfase em sequências de
-         instruções (comandos), decisões e iterações (laços de repetição,
-         ou loops).
+> Nestes casos, o Bash funcionaria como uma “cola”, unindo e atribuindo um fluxo para o tráfego e o processamento dos dados.
 
-     •   De tipagem indeterminada: o Bash só trabalha com dados do
-         tipo string e inteiro (números sem casas decimais), mas não faz
-2 – O Bash como linguagem de programação                                    67
+De forma alguma isso quer dizer que programas mais complexos não possam ser escritos em Bash puro, mas sempre vale a pena pesquisar e avaliar se as soluções externas não poderiam oferecer soluções mais vantajosas, especialmente se essas soluções vierem de ferramentas que estão disponíveis entre os programas utilitários centrais do sistema operacional GNU – os chamados core utils, como sed, grep, awk e outros programas.
 
-        distinção entre eles até que sejam utilizados em algum contexto,
-        o que, de certa forma, também pode enquadrá-lo na categoria
-        das linguagens de tipagem dinâmica.
+### 2.2 – Nosso primeiro programa em Bash
 
- Apesar de trabalhar apenas com strings e inteiros, outros tipos de dados
- podem ser utilizados através dos comandos e programas utilitários que
- entrarem nos nossos códigos.
-
-
-Sendo uma linguagem de propósito geral, o Bash permite a criação de
-programas para as mais diversas finalidades, desde pequenos scripts de
-automação para tarefas diárias até a criação de programas bem mais
-complexos.
-
-O que não deve ser esquecido, porém, é o fato de que, quanto mais
-complexo, mais os programas escritos em Bash dependerão de outros
-programas especializados para as tarefas não cobertas nativamente
-pelos recursos do shell. Em princípio, isso não representa problema
-algum – afinal, toda a Filosofia Unix se baseia na criação de sistemas
-complexos a partir de pequenas ferramentas especializadas capazes de
-trocar dados entre si.
-
- Nestes casos, o Bash funcionaria como uma “cola”, unindo e atribuindo
- um fluxo para o tráfego e o processamento dos dados.
-
-
-De forma alguma isso quer dizer que programas mais complexos não
-possam ser escritos em Bash puro, mas sempre vale a pena pesquisar e
-avaliar se as soluções externas não poderiam oferecer soluções mais
-vantajosas, especialmente se essas soluções vierem de ferramentas que
-estão disponíveis entre os programas utilitários centrais do sistema
-operacional GNU – os chamados core utils, como sed, grep, awk e outros
-programas.
-
-
-2.2 – Nosso primeiro programa em Bash
-A aplicação mais elementar de um programa em Bash é a execução de
-comandos em lote. Considere, por exemplo, a situação hipotética de um
-68                             Pequeno Manual do Programador GNU/Bash
-
-usuário que precise, por algum motivo, executar as quatro linhas de
-comando abaixo em sequência e com uma certa frequência:
-
+A aplicação mais elementar de um programa em Bash é a execução de comandos em lote. Considere, por exemplo, a situação hipotética de um usuário que precise, por algum motivo, executar as quatro linhas de comando abaixo em sequência e com uma certa frequência:
 
  :~$ whoami
  blau
@@ -1515,10 +1175,7 @@ hostname       Exibe o nome da máquina na rede.
 uptime         Informa há quanto tempo a máquina está ligada.
 uname          Exibe informações sobre o kernel.
 
-Sabendo que o shell permite a execução de comandos a partir de um
-arquivo, faz muito mais sentido criar um script contendo todos esses
-comandos e executar o lote todo de uma vez invocando apenas o nome
-desse script. O conteúdo do arquivo teria a seguinte aparência:
+Sabendo que o shell permite a execução de comandos a partir de um arquivo, faz muito mais sentido criar um script contendo todos esses comandos e executar o lote todo de uma vez invocando apenas o nome desse script. O conteúdo do arquivo teria a seguinte aparência:
 
 Exemplo 2.9 – Como seria um script de comandos em lote.
 
@@ -1527,9 +1184,7 @@ Exemplo 2.9 – Como seria um script de comandos em lote.
  uptime -p
  uname -rms
 
-Se esse arquivo fosse salvo com o nome infos.sh, por exemplo, o script
-poderia ser executado assim:
-2 – O Bash como linguagem de programação                                 69
+Se esse arquivo fosse salvo com o nome infos.sh, por exemplo, o script poderia ser executado assim:
 
 Exemplo 2.10 – Executando o script ‘infos.sh’.
 
@@ -1539,61 +1194,39 @@ Exemplo 2.10 – Executando o script ‘infos.sh’.
  up 2 weeks, 3 days, 19 hours, 42 minutes
  Linux 4.19.0-6-amd64 x86_64
 
-Observe que o script infos.sh foi executado como argumento de uma
-invocação do executável do Bash. Isso foi necessário por dois motivos: o
-nosso arquivo não tem permissão de execução e nem contém a linha do
-interpretador de comandos (a shebang).
+Observe que o script infos.sh foi executado como argumento de uma invocação do executável do Bash. Isso foi necessário por dois motivos: o nosso arquivo não tem permissão de execução e nem contém a linha do interpretador de comandos (a shebang).
 
- Na verdade, a linha do interpretador seria totalmente desnecessária neste
- exemplo – afinal, o script não contém nada que precise ser interpretado
- especificamente pelo Bash.
+> Na verdade, a linha do interpretador seria totalmente desnecessária neste  exemplo – afinal, o script não contém nada que precise ser interpretado especificamente pelo Bash.
 
-
-Para que seja possível chamar o nosso script pelo nome, vamos alterar
-sua permissão de execução:
+Para que seja possível chamar o nosso script pelo nome, vamos alterar sua permissão de execução:
 
 Exemplo 2.11 – Tornando ‘infos.sh’ executável.
 
  :~$ chmod +x infos.sh
 
-Mas ainda não será possível chamá-lo apenas pelo nome. Acontece que
-todo programa precisa ser localizado pelo shell antes de ser executado,
-ou seja, é preciso informar um caminho até ele. Aqui no exemplo, nós
-estamos supondo que o script foi salvo no diretório corrente, mas isso
-não nos isenta da necessidade de informar um caminho, tanto que só
-será possível executar o script desta forma:
+Mas ainda não será possível chamá-lo apenas pelo nome. Acontece que todo programa precisa ser localizado pelo shell antes de ser executado, ou seja, é preciso informar um caminho até ele. Aqui no exemplo, nós estamos supondo que o script foi salvo no diretório corrente, mas isso não nos isenta da necessidade de informar um caminho, tanto que só será possível executar o script desta forma:
 
 Exemplo 2.12 – Executando um script no diretório corrente.
 
  :~$ ./infos.sh
 
-Onde o ./ representa justamente o diretório em que nós estamos
-trabalhando no momento.
-70                              Pequeno Manual do Programador GNU/Bash
+Onde o ./ representa justamente o diretório em que nós estamos trabalhando no momento.
 
+### 2.2.1 – A variável PATH é o caminho
 
-2.2.1 – A variável PATH é o caminho
-Para que a informação do caminho seja realmente dispensável, o nosso
-script precisa estar salvo em um dos diretórios listados na variável de
-ambiente PATH. Se você não sabe quais são esses diretórios, basta
-executar no terminal…
+Para que a informação do caminho seja realmente dispensável, o nosso script precisa estar salvo em um dos diretórios listados na variável de ambiente PATH. Se você não sabe quais são esses diretórios, basta executar no terminal…
 
 Exemplo 2.13 – Exibindo os caminhos na variável ‘PATH’.
 
  :~$ echo $PATH
 
-Aqui, o comando echo irá exibir todas as pastas que estão listadas na
-variável de ambiente PATH, cada uma delas separada por dois pontos ( :)
-das outras. Por exemplo, está é a listagem aqui no meu sistema:
-
+Aqui, o comando echo irá exibir todas as pastas que estão listadas na variável de ambiente PATH, cada uma delas separada por dois pontos ( :) das outras. Por exemplo, está é a listagem aqui no meu sistema:
 
  :~$ echo $PATH
  /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/ho
  me/blau/bin
 
-Esta lista mostra que os aplicativos e scripts que eu executar no prompt
-de comando serão procurados nestes caminhos na seguinte ordem:
-
+Esta lista mostra que os aplicativos e scripts que eu executar no prompt de comando serão procurados nestes caminhos na seguinte ordem:
 
  /usr/local/bin
  /usr/bin
@@ -1602,27 +1235,15 @@ de comando serão procurados nestes caminhos na seguinte ordem:
  /usr/games
  /home/blau/bin
 
-Repare que, no meu caso, a última pasta em que o shell fará a busca
-pelos arquivos dos executáveis será em /home/blau/bin, que é um
-diretório (bin) na minha pasta de usuário ( /home/blau). Este caminho
-não existia originalmente na variável de ambiente PATH quando eu
-instalei o meu sistema, eu tive que incluí-lo com o seguinte comando:
-2 – O Bash como linguagem de programação                                  71
+Repare que, no meu caso, a última pasta em que o shell fará a busca pelos arquivos dos executáveis será em /home/blau/bin, que é um diretório (bin) na minha pasta de usuário ( /home/blau). Este caminho não existia originalmente na variável de ambiente PATH quando eu instalei o meu sistema, eu tive que incluí-lo com o seguinte comando:
 
 Exemplo 2.14 – Incluindo temporariamente um caminho na variável ‘PATH’.
 
  :~$ PATH=$PATH:/home/blau/bin
 
-Como você pode ver, o comando é uma operação de atribuição, como
-aquela vista no exemplo 1.10, mas algo parece diferente, por isso vamos
-tentar entendê-lo da mesma forma que o shell faria.
+Como você pode ver, o comando é uma operação de atribuição, como aquela vista no exemplo 1.10, mas algo parece diferente, por isso vamos tentar entendê-lo da mesma forma que o shell faria.
 
-A primeira coisa que o shell faz antes de interpretar uma linha de
-comando é procurar pelas possíveis expansões, o que ele descobriria
-pela presença do sinal $. Como vimos, o $ é utilizado na expansão dos
-valores armazenados nas variáveis (também chamada de expansão de
-parâmetros), logo, o shell continuaria percorrendo a linha em busca de
-um nome de variável válido, encontrando os caracteres P, A, T, H...
+A primeira coisa que o shell faz antes de interpretar uma linha de comando é procurar pelas possíveis expansões, o que ele descobriria pela presença do sinal $. Como vimos, o $ é utilizado na expansão dos valores armazenados nas variáveis (também chamada de expansão de parâmetros), logo, o shell continuaria percorrendo a linha em busca de um nome de variável válido, encontrando os caracteres P, A, T, H...
 
 Opa! O dois pontos (:)não é um caractere válido no nome de variáveis!
 
