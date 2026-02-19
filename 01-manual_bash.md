@@ -5,216 +5,8 @@
 - Copyright © 2020, Blau Araujo
 
 > **Publicado sob os termos da licença CC-BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/**
-
-# Prefácio, por Paulo Kretcheu.
-# Introdução e convenções.
-# Sobre a organização dos tópicos.
-# Instale o Bash.
-# Convenções tipográficas.
-# A filosofia Unix.
-# 1 – O que é um shell.
-## 1.1 – Iniciando e terminando sessões do shell.
-### 1.1.1 – Iniciando o shell.
-### 1.1.2 – O que é um script.
-### 1.1.3 – Dando permissão de execução.
-### 1.1.4 – Invocando o shell na linha de comandos.
-### 1.1.5 – Encerrando o shell.
-## 1.2 – O prompt de comandos.
-### 1.2.1 – Usuário administrativo (root).
-### 1.2.2 – Mais informações no prompt.
-### 1.2.3 – Um pequeno desvio – o tal do til (~).
-### 1.2.4 – Voltando ao prompt.
-### 1.2.5 – A variável PS1.
-### 1.2.6 – Caracteres de comando do prompt.
-### 1.2.7 – Expandindo valores de variáveis.
-## 1.3 – Executando no console ou no terminal.
-### 1.3.1 – Um pouco de história.
-### 1.3.2 – Terminal ou console?.
-## 1.4 – Os vários shells.
-### 1.4.1 – Sobre os padrões POSIX.
-## 1.5 – Descobrindo o shell em execução.
-### 1.5.1 – A variável de ambiente SHELL.
-### 1.5.2 – Lendo o conteúdo de /etc/passwd.
-## 1.6 – Alterando o shell.
-### 1.6.1 – O comando ‘chsh’.
-### 1.7 – O shell de login.
-## 1.8 – Modos de execução.
-### 1.8.1 – Modo interativo.
-### 1.8.2 – Modo não-interativo.
-### 1.8.3 – Como detectar se estamos ou não no modo interativo.
-## 1.9 – Obtendo ajuda.
-### 1.9.1 – Manual online.
-### 1.9.2 – Comando ‘man’.
-### 1.9.3 – Comando interno ‘help’.
-### 1.9.4 – Descobrindo se o comando é ou não é builtin.
-### 1.9.5 – Redirecionando mensagens e capturando estados de saída.
-### 1.9.6 – Enviando saídas para o limbo.
-# 2 – O Bash como linguagem de programação.
-## 2.1 – O que é um programa.
-### 2.1.1 – Linguagens compiladas e interpretadas.
-### 2.1.2 – O Bash é um interpretador de comandos.
-### 2.1.3 – Operadores de controle.
-### 2.1.4 – Executando comandos em segundo plano.
-### 2.1.5 – Encadeando comandos condicionalmente.
-### 2.1.6 – Classificações do Bash como linguagem de programação.
-## 2.2 – Nosso primeiro programa em Bash.
-### 2.2.1 – A variável PATH é o caminho.
-### 2.2.2 – Portabilidade e a linha do interpretador.
-### 2.2.3 – O shell não sabe o que são extensões de arquivos.
-### 2.2.4 – Organizando o fluxo de trabalho com links simbólicos.
-### 2.2.5 – Quem disse que o Bash não trabalha com valores lógicos?.
-### 2.2.6 – Toda falsidade é um erro.
-### 2.2.7 – Programar é uma forma de expressão.
-### 2.2.8 – Novamente: cuidado com o que você acha que é lógico!.
-### 2.2.9 – Testando “expressões condicionais”?!.
-### 2.2.10 – Voltando ao link simbólico do nosso script.
-### 2.3 – Um script para criar scripts.
-### 2.3.1 – A escolha do editor.
-### 2.3.2 – Padronizando uma pasta de projetos.
-### 2.3.3 – Tornando o arquivo executável..
-### 2.3.4 – Verificações e tratamento de erros.
-### 2.3.5 – Como o programa será utilizado.
-### 2.3.6 – O modelo do novo script.
-### 2.3.7 – O que falta saber.
-### 2.3.8 – Recebendo dados do usuário como parâmetros.
-### 2.3.9 – Explorando igualdades e desigualdades.
-### 2.3.10 – Comparando padrões e expressões regulares.
-### 2.3.11 – As classes POSIX.
-### 2.3.12 – Algumas regras para entender de regex no Bash.
-### 2.3.13 – Sofrendo com as variáveis LANG e LC_*.
-### 2.3.14 – Testando a existência de pastas e arquivos.
-### 2.3.15 – Reaproveitando código com funções.
-### 2.3.16 – Armazenando mensagens em vetores indexados.
-### 2.3.17 – Substituição de comandos.
-### 2.3.18 – Com aspas duplas, simples ou sem aspas?.
-### 2.3.19 – Finalizando o seu script..
-# 3 – Variáveis.
-### 3.1 – Nomeando variáveis.
-### 3.2 – Vetores (arrays).
-### 3.3 – Acessando valores.
-### 3.4 – Indireções.
-### 3.5 – Número de elementos e de caracteres.
-### 3.6 – Escopo de variáveis.
-### 3.6.1 – Sessões filhas.
-### 3.6.2 – Variáveis de ambiente.
-### 3.6.3 – Subshells.
-### 3.7 – Variáveis inalteráveis (read-only).
-### 3.8 – Destruindo variáveis.
-### 3.9 – Variáveis são parâmetros.
-### 3.10 – Parâmetros especiais.
-# 4 – Expansões do shell.
-### 4.1 – A expansão dos aliases.
-### 4.2 – As outras expansões.
-### 4.3 – Como funcionam as aspas.
-### 4.3.1 – Caractere de escape.
-### 4.3.2 – Aspas simples.
-### 4.3.3 – Aspas duplas.
-### 4.3.4 – Expansão de caracteres ANSI-C.
-### 4.3.5 – Espaços e quebras de linha.
-### 4.3.6 – Comentários – a restrição máxima.
-## 4.4 – Divisão de palavras.
-## 4.5 – Remoção de aspas.
-## 4.6 – Expansão do til.
-### 4.6.1 – Expandindo pastas de usuários específicos.
-### 4.6.2 – Expandindo o diretório corrente.
-### 4.6.3 – Expandindo o último diretório visitado.
-### 4.6.4 – Expandindo diretórios empilhados.
-### 4.6.5 – Atenção para a ordem da expansão do til.
-## 4.7 – Expansões de chaves.
-## 4.8 – Expansão de nomes de arquivos.
-### 4.8.1 – Como funciona a expansão de nomes de arquivos.
-### 4.8.2 – Listando arquivos com o comando ‘echo’.
-### 4.8.3 – A opção ‘nullglob’.
-### 4.8.4 – Formação de padrões.
-### 4.8.5 – Ignorando nomes de arquivos.
-### 4.8.6 – ‘Globs’ estendidos.
-## 4.9 – Expansão de parâmetros.
-### 4.9.1 – Substrings.
-### 4.9.2 – Faixas de elementos de arrays.
-### 4.9.3 – Remoções e substituições a partir de padrões.
-### 4.9.4 – Uma pausa para o comando ‘set’.
-### 4.9.5 – Voltando às remoções e substituições.
-### 4.9.6 – Expandindo valores condicionalmente.
-### 4.9.7 – Alterando a caixa do texto.
-### 4.9.8 – Outras expansões de parâmetros.
-## 4.10 – Substituição de comandos.
-### 4.10.1 – Armazenando e expandindo a saída de comandos.
-### 4.10.2 – Cuidado com o escopo das variáveis.
-### 4.10.3 – Saída em múltiplas linhas.
-### 4.10.4 – Expandindo o conteúdo de arquivos.
-### 4.10.5 – Comprando ‘cat’ por lebre.
-### 4.10.6 – A sintaxe antiga.
-## 4.11 – Expansões aritméticas.
-## 4.12 – Substituição de processos.
-# 5 – Fluxos de dados e redirecionamentos.
-## 5.1 – Fluxos de entrada e saída de dados.
-## 5.2 – Os descritores de arquivos.
-## 5.3 – Os fluxos padrão (stdin, stdout e stderr).
-## 5.4 – Lendo a entrada padrão.
-## 5.5 – Enviando dados para a entrada padrão.
-### 5.5.1 – Redirecionamento de arquivos para stdin.
-### 5.5.2 – Eis o here-document.
-### 5.5.3 – Aqui está a here-string.
-## 5.6 – Redirecionamento das saídas.
-### 5.6.1 – Redirecionamento da saída para arquivos.
-### 5.6.2 – Redirecionamento para append em arquivos.
-## 5.7 – Pipes.
-# 6 - Operadores e expressões.
-## 6.1 – Operadores do contexto de comandos.
-### 6.1.1 – Operadores de controle.
-### 6.1.2 – Operadores de redirecionamento.
-## 6.2 – Operadores do contexto de expressões.
-## 6.3 – Operadores de expressões afirmativas.
-### 6.3.1 – Operadores unários de arquivos.
-### 6.3.2 – Operadores binários de arquivos.
-### 6.3.3 – Operadores de strings.
-### 6.3.4 – Operadores de comparação numérica.
-### 6.3.5 – Operadores para configurações e variáveis.
-### 6.3.6 – Operadores lógicos.
-## 6.4 – Operadores de expressões aritméticas.
-### 6.4.1 – Operadores de atribuição.
-### 6.4.2 – Operadores aritméticos.
-### 6.4.3 – Operadores de incremento e decremento.
-### 6.4.4 – Operadores bit-a-bit.
-### 6.4.5 – Operadores lógicos.
-### 6.4.6 – Operadores de comparação.
-### 6.4.7 – Operador condicional.
-### 6.4.8 – Operadores unários de sinal.
-## 6.5 – Precedência de operadores.
-# 7 – Comandos compostos.
-### 7.1 – Agrupando comandos com chaves e parêntesis.
-### 7.2 – Estruturas de decisão.
-### 7.2.1 – Grupos e operadores de controle condicional.
-### 7.2.2 – O comando composto ‘if’.
-### 7.2.3 – O comando composto ‘case’.
-### 7.3 – Estruturas de repetição.
-### 7.3.1 – O loop ‘for’.
-### 7.3.2 – Os loops ‘while’ e ‘until’.
-### 7.3.3 – Cadê o loop ‘do-while’?.
-### 7.3.4 – Loops infinitos com ‘while’ e ‘until’.
-### 7.3.5 – Saindo do loop com ‘break’.
-### 7.3.6 – Pulando o restante da iteração com ‘continue’.
-### 7.3.7 – Criando menus com loops infinitos.
-### 7.3.8 – O menu ‘select’.
-### 7.3.9 – O prompt PS3.
-# 8 – Funções.
-## 8.1 – Criando funções com outros comandos compostos.
-### 8.1.1 – Funções com agrupamentos em parêntesis.
-### 8.1.2 – Testes nomeados.
-### 8.1.3 – Expressões aritméticas nomeadas.
-### 8.1.4 – Um loop for nomeado.
-### 8.1.5 – Um menu select nomeado.
-## 8.2 – Sobre os nomes das funções.
-## 8.3 – Passagem de argumentos para funções.
-## 8.4 – Escopo de variáveis em funções.
-## 8.5 – Destruindo funções.
-## 8.6 – Retorno de funções no Bash.
-## 8.7 – Obtendo o nome da função.
-## 8.8 – Variáveis, aliases e funções
-## 9 – Uma mensagem (quase) final
-## Índice de Exemplo
                                               
-# Prefácio, por Paulo Kretcheu
+## Prefácio, por Paulo Kretcheu
 
 Quando meu novo amigo Blau Araújo me pediu para escrever esse prefácio, de pronto aceitei.
 
@@ -235,7 +27,7 @@ Espero que, como eu, você desfrute dessa obra de leitura tranquila e divertida.
 
 > **Paulo Kretcheu | 24 de outubro de 2020**
 
-# Introdução e convenções
+## Introdução e convenções
 
 Se você achou que encontraria um manual com todas as informações e exemplos de uso de todos os comandos e recursos do Bash, você entendeu errado o nome deste livro. Este é um manual do programador que utiliza os conceitos da Filosofia Unix, conforme implementada pelo Projeto GNU, para programar em Bash. Pense comigo: qual o sentido escrever mais um livro falando dos mesmos comandos e utilitários do shell padrão do sistema operacional GNU quando já temos as obras de escritores e programadores geniais do calibre de um Júlio Neves ou de um Aurélio Jargas? Boa parte da minha motivação para esse empreendimento, aliás, vem justamente da paixão pelo shell que eu compartilho com esses mestres – e talvez esta seja a única coisa que nós tenhamos em comum.
 
@@ -243,7 +35,7 @@ Ironicamente, com eles, eu nunca aprendi a programar em shell! Para isso, bastar
 
 Com toda humildade de quem reconhece a sua própria estatura diante de gigantes, é isso que eu me proponho a fazer neste livro. Mais do que oferecer mais uma fonte de consulta para o seu arsenal de programador, o que eu realmente quero é convidá-lo para uma jornada de descobertas, onde cada novo conceito, cada comando, cada linha de código seja uma surpresa e um motivo a mais para você se apaixonar pela possibilidade de programar em Bash.
 
-# Sobre a organização dos tópicos
+## Sobre a organização dos tópicos
 
 Quando comecei a ensinar linguagens de programação, umas das coisas que logo chamaram a minha atenção foi o fato de que não há como explicar um conceito básico sem recorrer a exemplos que envolvam os conceitos mais avançados. Um simples “Olá, mundo”, em qualquer linguagem, sempre fará referência a uma ou duas coisas que só poderão ser abordadas a fundo bem mais adiante numa sequência progressiva.
 
@@ -255,11 +47,11 @@ A minha visão pessoal do que seria um aprendizado progressivo acabou restrita �
 - **No capítulo 2** - O Bash como linguagem de programação, além de abordarmos as peculiaridades do desenvolvimento em Bash, nós trabalharemos em um pequeno projeto: um script para criar scripts, e teremos inúmeras oportunidades para tomar contato, na prática, com quase tudo que precisamos saber para começar-mos a programar em Bash.
 - **Do capítulo 3** em diante, entra em cena o nosso lado mais        “manual”. A partir daqui, você poderá ler os tópicos em sequência ou, se achar melhor, pode utilizá-los como fonte de consulta quando precisar de alguma informação – você decide.
 
-# Instale o Bash
+## Instale o Bash
 
 Felizmente, não há como aprender o Bash sem que ele esteja instalado e disponível para os nossos experimentos (seria muito chato se isso fosse possível). Se você usa o sistema operacional GNU/Linux, que é o foco deste livro, é bem provável que ele já seja o seu shell padrão. Mas, se não for, todas as distribuições oferecem formas simples de instalá-lo. De qualquer forma, se for o caso, os procedimentos podem variar muito e eu poderia atrapalhar mais do que ajudar. Então, a minha sugestão é que você consulte a documentação ou as comunidades de ajuda do seu sistema operacional.
 
-# Convenções tipográficas
+## Convenções tipográficas
 
 No texto, tudo que aparecer em itálico representa algo que merece a sua atenção por algum motivo – podem ser termos ou expressões que serão explicados posteriormente, em outros idiomas, ou apenas eu tentando aguçar a sua curiosidade.
 
@@ -334,7 +126,7 @@ formas:
 
 Mas isso é apenas uma impressão causada pela experiência de utilização do sistema operacional. Na verdade, sempre que um shell é iniciado, significa que algo invocou o seu executável de alguma forma. Quando abrimos um terminal, por exemplo, a primeira coisa que vemos é o prompt do shell. Isso significa que, ao ser iniciado, o terminal invocou o executável de um shell.
 
-img-prompt
+![bash](imagens/bash13.png)
 
 > **Pense nisso:** o emulador de terminal é um programa cuja única finalidade é executar um shell.
 
@@ -446,13 +238,13 @@ Em sistemas operacionais unix-like, o usuário root é uma conta especial que te
 
 No prompt, esta indicação geralmente é feita com o símbolo `#`(cardinal) no lugar do `$` ou do símbolo que for utilizado para indicar o login de um usuário comum.
 
-Exemplos de shell com usuário **comun** no Debian GNU/Linux.
-
-![bash](imagens/bash11.png)
-
-Exemplos de shell com usuário **root** no Debian GNU/Linux.
+**Exemplos de shell com usuário "comun" no Debian GNU/Linux.**
 
 ![bash](imagens/bash12.png)
+
+**Exemplos de shell com usuário "root" no Debian GNU/Linux.**
+
+![bash](imagens/bash11.png)
 
 > **Importante!** Fique atento ao seu prompt e, a menos que seja orientado a fazer o contrário, jamais execute os nossos exemplos e experimentos como usuário **root!**
 
@@ -478,27 +270,27 @@ Deste modo, o comando `echo` sequer chega a “ver” o til digitado na linha de
 
 No prompt, o til também representa a nossa pasta de usuário, mas ali é só isso, não há uma expansão, ele só está encurtando o tamanho do prompt. Isso é necessário porque, a partir da pasta de usuário, nós podemos navegar por outras pastas ligadas a ela, e o prompt geralmente é configurado para exibir em que pasta estamos no momento.
 
-Então, se eu entrar na pasta Documentos e, dentro dela, eu entrar na pasta clientes, o prompt será alterado para exibir todo o caminho a partir da minha pasta pessoal: :~/Documentos/clientes$.
+Então, se eu entrar na pasta Documentos e, dentro dela, eu entrar na pasta clientes, o prompt será alterado para exibir todo o caminho a partir da minha pasta pessoal: `~/Documentos/scrip$`.
 
-img-
+![prompt](imagens/bash13.png)
 
 ### 1.2.5 - A variável PS1
 
-O prompt é configurado a partir de uma variável de ambiente chamada PS1 (Prompt String 1, em inglês), que é uma entre quatro variáveis que definem algum tipo de prompt. Mas você deve estar se perguntando: **“o que é uma variável de ambiente?”**
+O prompt é configurado a partir de uma variável de ambiente chamada `PS1` (Prompt String 1, em inglês), que é uma entre quatro variáveis que definem algum tipo de prompt. Mas você deve estar se perguntando: **“o que é uma variável de ambiente?”**
 
 Nós veremos isso mais a fundo no capítulo 3, mas pense numa variável como uma gaveta onde você pode guardar algum tipo de informação. Sempre que precisar dessa informação, basta abrir a gaveta que ela estará lá. Quando trabalhamos com o shell, ou em qualquer linguagem de programação, nós podemos criar várias dessas gavetas para as mais diversas finalidades (seja no terminal ou em scripts), e o shell faz a mesma coisa em várias situações.
 
-Especificamente na inicialização do shell (quando abrimos um terminal ou fazemos um login no console), algumas variáveis serão criadas para definir inúmeros aspectos do ambiente em que ele será executado – são as variáveis de ambiente. Uma dessas variáveis de ambiente é justamente a variável PS1, e a informação que ela armazena é uma string que representa o que será exibido no prompt de comando.
+Especificamente na inicialização do shell (quando abrimos um terminal ou fazemos um login no console), algumas variáveis serão criadas para definir inúmeros aspectos do ambiente em que ele será executado – são as variáveis de ambiente. Uma dessas variáveis de ambiente é justamente a variável `PS1`, e a informação que ela armazena é uma string que representa o que será exibido no prompt de comando.
 
-Na maioria das distribuições GNU/Linux, o prompt é configurado para exibir algo assim:
+Na maioria das distribuições GNU/Linux, o prompt é configurado para exibir algo assim: `paulo@debian13:~$`.
 
-blau@enterprise:~$
+![prompt](imagens/bash12.png)
 
 ### 1.2.6 - Caracteres de comando do prompt
 
 Cada um dos componentes do prompt acima é definido na string armazenada na variável PS1 a partir de um código especial iniciado com `\` (barra invertida ou escape) representado por um caractere que equivale a um comando específico a ser executado na expansão da string que formará o prompt.
 
-**eja na tabela:**
+**Veja na tabela:**
 
 | **Código** | **Descrição** |
 |--------|-------------------|
@@ -519,20 +311,23 @@ Se quisermos testar como fica a aparência da configuração acima, existem algu
 
 **Exemplo 1.10 – Alterando o valor em ‘PS1’.**
 
-:~$ PS1='\u@\h:\w\$ '
- blau@enterprise:~$
+![prompt](imagens/bash14.png)
 
 O sinal de igual `(=)` é um dos operadores do shell (capítulo 6), e é responsável por realizar atribuições de valores a variáveis. Portanto, note que a linha da configuração do prompt é um comando do shell como outro qualquer.
 
 No exemplo, quando o comando de atribuição foi executado, a alteração do prompt foi imediata, mas o seu efeito será limitado ao shell em execução no momento, ou seja, não afetará sessões do shell iniciadas posteriormente.
 
-Para que a alteração fosse definitiva, seria preciso editar um dos arquivos de configuração do Bash, o que pode ser feito apenas para o usuário editando o arquivo .bashrc, um arquivo oculto (iniciado com ponto) que fica na nossa pasta pessoal. Se fosse este o caso, bastaria abrir o arquivo .bashrc e incluir a linha do comando de atribuição ao final do texto, mas a mudança só teria efeito a partir de duas condições: reiniciando o terminal ou executando:
+Para que a alteração fosse definitiva, seria preciso editar um dos arquivos de configuração do Bash, o que pode ser feito apenas para o usuário editando o arquivo `.bashrc`, um arquivo oculto (iniciado com ponto) que fica na nossa pasta pessoal. 
+
+![prompt](imagens/bash15.png)
+
+Se fosse este o caso, bastaria abrir o arquivo `.bashrc` e incluir a linha do comando de atribuição ao final do texto, mas a mudança só teria efeito a partir de duas condições: reiniciando o terminal ou executando:
 
 **Exemplo 1.11 – Aplicado alterações no arquivo ‘~/.bashrc’.**
 
-:~$ source ~/.bashrc
+![prompt](imagens/bash16.png)
 
-O comando source é outro comando interno (builtin) do Bash e serve para executar na sessão corrente do shell os comandos em um arquivo. Então, tudo que o comando do exemplo 1.11 faz é executar o conteúdo do arquivo .bashrc na sessão atual do Bash, inclusive a definição do nosso prompt.
+O comando `source` é outro comando interno (builtin) do Bash e serve para executar na sessão corrente do shell os comandos em um arquivo. Então, tudo que o comando do exemplo 1.11 faz é executar o conteúdo do arquivo .bashrc na sessão atual do Bash, inclusive a definição do nosso prompt.
 
 Aliás, se você executou o comando do exemplo 1.10 apenas para ver como ficaria o seu prompt e quer uma forma de restaurar as configurações originais, basta fazer um outro source do .bashrc, como fizemos no exemplo 1.11.
 
@@ -1167,13 +962,7 @@ Exemplo 2.3 – Testando estados de saída com ‘if’.
       echo 'erro'
  fi
 
-O que nos leva a deduzir, por observação, que a parte que está entre
-colchetes duplos ([[ ]]) no exemplo 2.2 também é um comando! Em
-ambos os exemplos, o papel do if é acompanhar o estado de saída do
-comando executado e dirigir o fluxo do programa para o bloco de
-comandos que corresponda ao caso: then → sucesso ou else → erro.
-60                          Pequeno Manual do Programador GNU/Bash
-
+O que nos leva a deduzir, por observação, que a parte que está entre colchetes duplos ([[ ]]) no exemplo 2.2 também é um comando! Em ambos os exemplos, o papel do if é acompanhar o estado de saída do comando executado e dirigir o fluxo do programa para o bloco de comandos que corresponda ao caso: then → sucesso ou else → erro.
 
  O comando composto [[ ]] avalia expressões condicionais, tal como o
  comando interno test, que veremos mais adiante ainda neste capítulo.
@@ -1186,35 +975,17 @@ Outro bom exemplo de como funciona a “lógica” do Bash está nos
 operadores de controle, especialmente os dois mais populares, && e ||,
 utilizados no encadeamento condicional de comandos.
 
+### 2.1.3 – Operadores de controle
 
-2.1.3 – Operadores de controle
-Geralmente, a primeira palavra da linha de um comando simples (para
-diferenciar dos comandos compostos) corresponde ao comando (ou pro-
-grama) a ser executado. Em seguida, se houver, podem vir os argumen-
-tos e, por fim, sempre teremos um operador de controle, sem o qual, o
-comando não será executado.
+Geralmente, a primeira palavra da linha de um comando simples (para diferenciar dos comandos compostos) corresponde ao comando (ou programa) a ser executado. Em seguida, se houver, podem vir os argumentos e, por fim, sempre teremos um operador de controle, sem o qual, o comando não será executado.
 
-No Bash, o operador de controle padrão é a quebra de linha (gerada
-quando teclamos Enter no terminal, por exemplo), mas ele não é o
-único. Por exemplo, tanto no terminal quanto nos scripts, é possível
-escrever vários comandos em uma mesma linha utilizando o ponto e
-vírgula (;) para separá-los – para a alegria dos programadores em C e
-PHP!
+No Bash, o operador de controle padrão é a quebra de linha (gerada quando teclamos Enter no terminal, por exemplo), mas ele não é o único. Por exemplo, tanto no terminal quanto nos scripts, é possível escrever vários comandos em uma mesma linha utilizando o ponto e vírgula (;) para separá-los – para a alegria dos programadores em C e PHP!
 
-Sendo assim, a ocorrência de um operador de controle ; indica para o
-shell que o comando deve ser executado, tal como se tivéssemos teclado
-um Enter, e que ainda pode haver outro comando encadeado na se-
-quência...
-
+Sendo assim, a ocorrência de um operador de controle ; indica para o shell que o comando deve ser executado, tal como se tivéssemos teclado um Enter, e que ainda pode haver outro comando encadeado na sequência...
 
 Comando 1; Comando 2; …; Comando n
 
-Neste caso, ou com quebras de linha em um script, todos os comandos
-subsequentes são executados síncrona e incondicionalmente, ou seja, a
-2 – O Bash como linguagem de programação                                 61
-
-despeito do estado de saída do comando anterior, o comando seguinte
-aguardará seu término e será executado.
+Neste caso, ou com quebras de linha em um script, todos os comandos subsequentes são executados síncrona e incondicionalmente, ou seja, a despeito do estado de saída do comando anterior, o comando seguinte aguardará seu término e será executado.
 
  Aliás, quando se chega de uma vida de experiência na programação em
  linguagens como C e PHP, é muito comum sair terminando as linhas dos
@@ -1224,53 +995,30 @@ aguardará seu término e será executado.
  dos “bashistas”. Em vez disso, leve na brincadeira e tente assimilar e
  praticar as particularidades do Bash.
 
+### 2.1.4 – Executando comandos em segundo plano
 
-
-2.1.4 – Executando comandos em segundo plano
-Um outro operador de controle que encadeia uma série de comandos
-incondicionalmente é o &, também chamado de operador de comandos
-assíncronos.
-
+Um outro operador de controle que encadeia uma série de comandos incondicionalmente é o &, também chamado de operador de comandos assíncronos.
 
 Comando 1 & Comando 2
 
-Com ele, o segundo comando não espera o término do primeiro para ser
-executado. Neste caso, o primeiro comando é executado em outra
-sessão do shell (um subshell) e, para todos os efeitos, do ponto de vista
-do fluxo normal de execução, é como se ele tivesse sido encerrado com
-estado de saída de sucesso (0).
+Com ele, o segundo comando não espera o término do primeiro para ser executado. Neste caso, o primeiro comando é executado em outra sessão do shell (um subshell) e, para todos os efeitos, do ponto de vista do fluxo normal de execução, é como se ele tivesse sido encerrado com estado de saída de sucesso (0).
 
  Como não há nada a ser avaliado quanto ao estado de saída de um
  comando que é executado assincronamente (ou, “em background”, como
  se diz coloquialmente), o comando seguinte não precisa estar na mesma
  linha.
 
+### 2.1.5 – Encadeando comandos condicionalmente
 
-
-2.1.5 – Encadeando comandos condicionalmente
-De volta ao que falávamos sobre a lógica no Bash, os operadores de
-controle && (e) e || (ou) são utilizados para encadear comandos de forma
-condicionada aos seus estados de saída. Por exemplo:
-62                            Pequeno Manual do Programador GNU/Bash
+De volta ao que falávamos sobre a lógica no Bash, os operadores de controle && (e) e || (ou) são utilizados para encadear comandos de forma condicionada aos seus estados de saída. Por exemplo:
 
 Exemplo 2.4a – Condicionando a execução de comandos numa lista.
 
  :~$ true && echo 'sucesso' || echo 'erro'
 
-O comando interno true, utilizado no exemplo, só tem semelhança com
-o valor booleano literal true no nome. Sua finalidade é não fazer nada
-além de ser executado e sair com sucesso. Seu irmão malvado, o
-comando interno false, por sua vez, sempre termina com estado de
-saída de erro quando executado. Portanto, temos três comandos nesta
-lista encadeada, mas apenas dois deles serão executados. Quem decide
-isso são os operadores condicionais && e || a partir do estado de saída
-do comando testado.
+O comando interno true, utilizado no exemplo, só tem semelhança com o valor booleano literal true no nome. Sua finalidade é não fazer nada além de ser executado e sair com sucesso. Seu irmão malvado, o comando interno false, por sua vez, sempre termina com estado de saída de erro quando executado. Portanto, temos três comandos nesta lista encadeada, mas apenas dois deles serão executados. Quem decide isso são os operadores condicionais && e || a partir do estado de saída do comando testado.
 
-Caso o comando true termine com sucesso (e ele sempre termina com
-sucesso), o comando que vier após o operador && será executado e a
-mensagem sucesso será exibida. Caso contrário, só o comando que vier
-após o operador || será executado, causando a exibição da mensagem
-erro.
+Caso o comando true termine com sucesso (e ele sempre termina com sucesso), o comando que vier após o operador && será executado e a mensagem sucesso será exibida. Caso contrário, só o comando que vier após o operador || será executado, causando a exibição da mensagem erro.
 
 Observe:
 
@@ -1281,12 +1029,9 @@ Exemplo 2.4b – Condicionando a execução de comandos numa lista.
  :~$ false && echo 'sucesso' || echo 'erro'
  erro
 
-De certa forma, o funcionamento dos operadores && e || pode ser
-comparado ao de uma estrutura condicional if, mas existem algumas
-diferenças importantes.
+De certa forma, o funcionamento dos operadores && e || pode ser comparado ao de uma estrutura condicional if, mas existem algumas diferenças importantes.
 
 Por exemplo:
-2 – O Bash como linguagem de programação                              63
 
 Exemplo 2.5 – Diferença entre o ‘if’ e os operadores ‘&&’ e ‘||’. 8
 
@@ -1296,12 +1041,7 @@ Exemplo 2.5 – Diferença entre o ‘if’ e os operadores ‘&&’ e ‘||’.
  :~$ if true; then echo 'A'; false else echo 'B'; fi
  A
 
-Como podemos ver, a primeira linha fez com que tanto A quanto B
-fossem exibidos, ao passo que a segunda, com o comando composto if,
-causou a exibição apenas da string A. O problema aqui é que, no
-primeiro caso, estamos lidando com dois operadores, enquanto que, no
-segundo, nós temos uma estrutura que delimita blocos de comandos. De
-fato, a primeira linha equivaleria a isso:
+Como podemos ver, a primeira linha fez com que tanto A quanto B fossem exibidos, ao passo que a segunda, com o comando composto if, causou a exibição apenas da string A. O problema aqui é que, no primeiro caso, estamos lidando com dois operadores, enquanto que, no segundo, nós temos uma estrutura que delimita blocos de comandos. De fato, a primeira linha equivaleria a isso:
 
 
  :~$ true && echo 'A'
@@ -1309,49 +1049,28 @@ fato, a primeira linha equivaleria a isso:
  :~$ false || echo 'B'
  B
 
-Em termos mais tecnicamente precisos, os operadores && e || são
-binários, ou seja, são operadores que trabalham com apenas dois
-termos: o comando testado e o comando que será executado caso a
-condição representada pelo operador seja atendida. Veja este outro
-exemplo:
+Em termos mais tecnicamente precisos, os operadores && e || são binários, ou seja, são operadores que trabalham com apenas dois termos: o comando testado e o comando que será executado caso a condição representada pelo operador seja atendida. Veja este outro exemplo:
 
 Exemplo 2.6 – Os operadores de controle condicional são binários!
 
  :~$ true && false || echo 'Olha eu aqui!'
  Olha eu aqui!
 
-Aqui, true termina com sucesso e executa o comando false que, por sua
-vez, sempre termina com erro, causando a execução do comando echo.
-Como os operadores são binários, a linha do exemplo equivale às duas
-linhas abaixo:
+Aqui, true termina com sucesso e executa o comando false que, por sua vez, sempre termina com erro, causando a execução do comando echo. Como os operadores são binários, a linha do exemplo equivale às duas linhas abaixo:
 
-8   Meu muito obrigado ao amigo e conspirador André Amaral por este
-    exemplo.
-64                              Pequeno Manual do Programador GNU/Bash
-
+> Meu muito obrigado ao amigo e conspirador André Amaral por este exemplo.
 
  :~$ true && false
  :~$ false || echo 'Olha eu aqui!'
  Olha eu aqui!
 
-Para nunca mais se esquecer dessa ideia, a minha sugestão é que você
-pense das seguintes formas:
+Para nunca mais se esquecer dessa ideia, a minha sugestão é que você pense das seguintes formas:
 
-     •   Comando composto “if”: se o comando testado terminar com
-         sucesso, execute o “bloco then”; caso contrário, execute o “bloco
-         else”.
+- Comando composto “if”: se o comando testado terminar com sucesso, execute o “bloco then”; caso contrário, execute o “bloco else”.
+- Operador de controle “&&”: se o comando testado terminar com sucesso, execute “o comando seguinte” – pronto!
+- Operador de controle “||”: se o comando testado terminar com erro, execute “o comando seguinte” – pronto!
 
-     •   Operador de controle “&&”: se o comando testado terminar
-         com sucesso, execute “o comando seguinte” – pronto!
-
-     •   Operador de controle “||”: se o comando testado terminar
-         com erro, execute “o comando seguinte” – pronto!
-
-Outro detalhe importante é que, sendo binários, os operadores && e ||
-exigem que, pelo menos, o termo da esquerda (o comando a ser
-testado) esteja presente na linha de comando, ou teremos um erro de
-sintaxe no interpretador de comandos. O exemplo abaixo provocaria
-esse tipo de erro:
+Outro detalhe importante é que, sendo binários, os operadores && e || exigem que, pelo menos, o termo da esquerda (o comando a ser testado) esteja presente na linha de comando, ou teremos um erro de sintaxe no interpretador de comandos. O exemplo abaixo provocaria esse tipo de erro:
 
 Exemplo 2.7a – ‘&&’ e ‘||’ exigem o termo da esquerda!
 
@@ -1369,9 +1088,6 @@ Exemplo 2.7b – Comandos após ‘&&’ e ‘||’ podem estar em outra linha!
  true &&
  echo 'ok' ||
  echo 'não ok'
-2 – O Bash como linguagem de programação                               65
-
-
 
 # Saída: 'ok'
 
@@ -1381,15 +1097,9 @@ echo 'ok'
 
 # Saída: 'ok'
 
-Quando o segundo termo dos operadores && e || não está na mesma
-linha, a próxima linha que contiver um comando será executada (ou não)
-de acordo com a condição especificada e o estado de saída do comando
-testado. Sendo assim, true && e false || habilitam a execução do
-comando seguinte, enquanto true || e false && impedem. Para
-entender melhor a “lógica” dos operadores de controle condicional.
+Quando o segundo termo dos operadores && e || não está na mesma linha, a próxima linha que contiver um comando será executada (ou não) de acordo com a condição especificada e o estado de saída do comando testado. Sendo assim, true && e false || habilitam a execução do comando seguinte, enquanto true || e false && impedem. Para entender melhor a “lógica” dos operadores de controle condicional. 
 
 Observe como as linhas do exemplo 2.7b foram processadas:
-
 
 true && --------> (sucesso) pode executar.
 echo 'ok' || ---> (sucesso) não pode executar.
@@ -1411,7 +1121,6 @@ echo 'ok'             mas esta linha também não pôde
 
 O exemplo abaixo ilustra como é fácil cometer erros quando ignoramos
 a lógica dos operadores de controle condicional:
-66                              Pequeno Manual do Programador GNU/Bash
 
 Exemplo 2.8 – Cuidado com a lógica dos operadores ‘&&’ e ‘||’!
 
@@ -1421,83 +1130,34 @@ Exemplo 2.8 – Cuidado com a lógica dos operadores ‘&&’ e ‘||’!
 
  # Saída: 'ok' e 'não ok'!
 
+### 2.1.6 – Classificações do Bash como linguagem de programação
 
-2.1.6 – Classificações do Bash como linguagem de programação
-Para aplacar a inquietação daqueles que precisam categorizar tudo para
-poderem dormir mais tranquilos (como eu), vejamos como o Bash pode
-ser classificado no espectro dos principais conceitos que caracterizam
-uma linguagem de programação.
+Para aplacar a inquietação daqueles que precisam categorizar tudo para poderem dormir mais tranquilos (como eu), vejamos como o Bash pode ser classificado no espectro dos principais conceitos que caracterizam uma linguagem de programação.
 
-Brincadeiras à parte, todas essas classificações refletem os principais
-estilos e técnicas que podemos aprender e aplicar na programação em
-cada linguagem, e o Bash, embora altamente flexível neste aspecto,
-também possui seus estilos e técnicas.
+Brincadeiras à parte, todas essas classificações refletem os principais estilos e técnicas que podemos aprender e aplicar na programação em cada linguagem, e o Bash, embora altamente flexível neste aspecto, também possui seus estilos e técnicas.
 
 De forma resumida, podemos dizer que o Bash é uma linguagem...
 
-     •   De propósito geral: uma linguagem que pode ser utilizada na
-         criação de uma vasta gama de aplicações.
+- **De propósito geral:** uma linguagem que pode ser utilizada na criação de uma vasta gama de aplicações.
+- **Interpretada:** é o interpretador de comandos que executa as instruções escritas no código.
+- **De alto nível:** oferece uma sintaxe que se aproxima mais das linguagens humanas do que da linguagem da máquina.
+- **Procedural (ou imperativa):** o código especifica os passos que devem ser executados para a realização do objetivo desejado.
+- **Estruturada:** o código é escrito com ênfase em sequências de instruções (comandos), decisões e iterações (laços de repetição, ou loops).
+- **De tipagem indeterminada:** o Bash só trabalha com dados do tipo string e inteiro (números sem casas decimais), mas não faz distinção entre eles até que sejam utilizados em algum contexto, o que, de certa forma, também pode enquadrá-lo na categoria das linguagens de tipagem dinâmica.
 
-     •   Interpretada: é o interpretador de comandos que executa as
-         instruções escritas no código.
+Apesar de trabalhar apenas com strings e inteiros, outros tipos de dados podem ser utilizados através dos comandos e programas utilitários que entrarem nos nossos códigos.
 
-     •   De alto nível: oferece uma sintaxe que se aproxima mais das
-         linguagens humanas do que da linguagem da máquina.
+Sendo uma linguagem de propósito geral, o Bash permite a criação de programas para as mais diversas finalidades, desde pequenos scripts de automação para tarefas diárias até a criação de programas bem mais complexos.
 
-     •   Procedural (ou imperativa): o código especifica os passos que
-         devem ser executados para a realização do objetivo desejado.
+O que não deve ser esquecido, porém, é o fato de que, quanto mais complexo, mais os programas escritos em Bash dependerão de outros programas especializados para as tarefas não cobertas nativamente pelos recursos do shell. Em princípio, isso não representa problema algum – afinal, toda a Filosofia Unix se baseia na criação de sistemas complexos a partir de pequenas ferramentas especializadas capazes de trocar dados entre si.
 
-     •   Estruturada: o código é escrito com ênfase em sequências de
-         instruções (comandos), decisões e iterações (laços de repetição,
-         ou loops).
+> Nestes casos, o Bash funcionaria como uma “cola”, unindo e atribuindo um fluxo para o tráfego e o processamento dos dados.
 
-     •   De tipagem indeterminada: o Bash só trabalha com dados do
-         tipo string e inteiro (números sem casas decimais), mas não faz
-2 – O Bash como linguagem de programação                                    67
+De forma alguma isso quer dizer que programas mais complexos não possam ser escritos em Bash puro, mas sempre vale a pena pesquisar e avaliar se as soluções externas não poderiam oferecer soluções mais vantajosas, especialmente se essas soluções vierem de ferramentas que estão disponíveis entre os programas utilitários centrais do sistema operacional GNU – os chamados core utils, como sed, grep, awk e outros programas.
 
-        distinção entre eles até que sejam utilizados em algum contexto,
-        o que, de certa forma, também pode enquadrá-lo na categoria
-        das linguagens de tipagem dinâmica.
+### 2.2 – Nosso primeiro programa em Bash
 
- Apesar de trabalhar apenas com strings e inteiros, outros tipos de dados
- podem ser utilizados através dos comandos e programas utilitários que
- entrarem nos nossos códigos.
-
-
-Sendo uma linguagem de propósito geral, o Bash permite a criação de
-programas para as mais diversas finalidades, desde pequenos scripts de
-automação para tarefas diárias até a criação de programas bem mais
-complexos.
-
-O que não deve ser esquecido, porém, é o fato de que, quanto mais
-complexo, mais os programas escritos em Bash dependerão de outros
-programas especializados para as tarefas não cobertas nativamente
-pelos recursos do shell. Em princípio, isso não representa problema
-algum – afinal, toda a Filosofia Unix se baseia na criação de sistemas
-complexos a partir de pequenas ferramentas especializadas capazes de
-trocar dados entre si.
-
- Nestes casos, o Bash funcionaria como uma “cola”, unindo e atribuindo
- um fluxo para o tráfego e o processamento dos dados.
-
-
-De forma alguma isso quer dizer que programas mais complexos não
-possam ser escritos em Bash puro, mas sempre vale a pena pesquisar e
-avaliar se as soluções externas não poderiam oferecer soluções mais
-vantajosas, especialmente se essas soluções vierem de ferramentas que
-estão disponíveis entre os programas utilitários centrais do sistema
-operacional GNU – os chamados core utils, como sed, grep, awk e outros
-programas.
-
-
-2.2 – Nosso primeiro programa em Bash
-A aplicação mais elementar de um programa em Bash é a execução de
-comandos em lote. Considere, por exemplo, a situação hipotética de um
-68                             Pequeno Manual do Programador GNU/Bash
-
-usuário que precise, por algum motivo, executar as quatro linhas de
-comando abaixo em sequência e com uma certa frequência:
-
+A aplicação mais elementar de um programa em Bash é a execução de comandos em lote. Considere, por exemplo, a situação hipotética de um usuário que precise, por algum motivo, executar as quatro linhas de comando abaixo em sequência e com uma certa frequência:
 
  :~$ whoami
  blau
@@ -1515,10 +1175,7 @@ hostname       Exibe o nome da máquina na rede.
 uptime         Informa há quanto tempo a máquina está ligada.
 uname          Exibe informações sobre o kernel.
 
-Sabendo que o shell permite a execução de comandos a partir de um
-arquivo, faz muito mais sentido criar um script contendo todos esses
-comandos e executar o lote todo de uma vez invocando apenas o nome
-desse script. O conteúdo do arquivo teria a seguinte aparência:
+Sabendo que o shell permite a execução de comandos a partir de um arquivo, faz muito mais sentido criar um script contendo todos esses comandos e executar o lote todo de uma vez invocando apenas o nome desse script. O conteúdo do arquivo teria a seguinte aparência:
 
 Exemplo 2.9 – Como seria um script de comandos em lote.
 
@@ -1527,9 +1184,7 @@ Exemplo 2.9 – Como seria um script de comandos em lote.
  uptime -p
  uname -rms
 
-Se esse arquivo fosse salvo com o nome infos.sh, por exemplo, o script
-poderia ser executado assim:
-2 – O Bash como linguagem de programação                                 69
+Se esse arquivo fosse salvo com o nome infos.sh, por exemplo, o script poderia ser executado assim:
 
 Exemplo 2.10 – Executando o script ‘infos.sh’.
 
@@ -1539,61 +1194,39 @@ Exemplo 2.10 – Executando o script ‘infos.sh’.
  up 2 weeks, 3 days, 19 hours, 42 minutes
  Linux 4.19.0-6-amd64 x86_64
 
-Observe que o script infos.sh foi executado como argumento de uma
-invocação do executável do Bash. Isso foi necessário por dois motivos: o
-nosso arquivo não tem permissão de execução e nem contém a linha do
-interpretador de comandos (a shebang).
+Observe que o script infos.sh foi executado como argumento de uma invocação do executável do Bash. Isso foi necessário por dois motivos: o nosso arquivo não tem permissão de execução e nem contém a linha do interpretador de comandos (a shebang).
 
- Na verdade, a linha do interpretador seria totalmente desnecessária neste
- exemplo – afinal, o script não contém nada que precise ser interpretado
- especificamente pelo Bash.
+> Na verdade, a linha do interpretador seria totalmente desnecessária neste  exemplo – afinal, o script não contém nada que precise ser interpretado especificamente pelo Bash.
 
-
-Para que seja possível chamar o nosso script pelo nome, vamos alterar
-sua permissão de execução:
+Para que seja possível chamar o nosso script pelo nome, vamos alterar sua permissão de execução:
 
 Exemplo 2.11 – Tornando ‘infos.sh’ executável.
 
  :~$ chmod +x infos.sh
 
-Mas ainda não será possível chamá-lo apenas pelo nome. Acontece que
-todo programa precisa ser localizado pelo shell antes de ser executado,
-ou seja, é preciso informar um caminho até ele. Aqui no exemplo, nós
-estamos supondo que o script foi salvo no diretório corrente, mas isso
-não nos isenta da necessidade de informar um caminho, tanto que só
-será possível executar o script desta forma:
+Mas ainda não será possível chamá-lo apenas pelo nome. Acontece que todo programa precisa ser localizado pelo shell antes de ser executado, ou seja, é preciso informar um caminho até ele. Aqui no exemplo, nós estamos supondo que o script foi salvo no diretório corrente, mas isso não nos isenta da necessidade de informar um caminho, tanto que só será possível executar o script desta forma:
 
 Exemplo 2.12 – Executando um script no diretório corrente.
 
  :~$ ./infos.sh
 
-Onde o ./ representa justamente o diretório em que nós estamos
-trabalhando no momento.
-70                              Pequeno Manual do Programador GNU/Bash
+Onde o ./ representa justamente o diretório em que nós estamos trabalhando no momento.
 
+### 2.2.1 – A variável PATH é o caminho
 
-2.2.1 – A variável PATH é o caminho
-Para que a informação do caminho seja realmente dispensável, o nosso
-script precisa estar salvo em um dos diretórios listados na variável de
-ambiente PATH. Se você não sabe quais são esses diretórios, basta
-executar no terminal…
+Para que a informação do caminho seja realmente dispensável, o nosso script precisa estar salvo em um dos diretórios listados na variável de ambiente PATH. Se você não sabe quais são esses diretórios, basta executar no terminal…
 
 Exemplo 2.13 – Exibindo os caminhos na variável ‘PATH’.
 
  :~$ echo $PATH
 
-Aqui, o comando echo irá exibir todas as pastas que estão listadas na
-variável de ambiente PATH, cada uma delas separada por dois pontos ( :)
-das outras. Por exemplo, está é a listagem aqui no meu sistema:
-
+Aqui, o comando echo irá exibir todas as pastas que estão listadas na variável de ambiente PATH, cada uma delas separada por dois pontos ( :) das outras. Por exemplo, está é a listagem aqui no meu sistema:
 
  :~$ echo $PATH
  /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/ho
  me/blau/bin
 
-Esta lista mostra que os aplicativos e scripts que eu executar no prompt
-de comando serão procurados nestes caminhos na seguinte ordem:
-
+Esta lista mostra que os aplicativos e scripts que eu executar no prompt de comando serão procurados nestes caminhos na seguinte ordem:
 
  /usr/local/bin
  /usr/bin
@@ -1602,27 +1235,15 @@ de comando serão procurados nestes caminhos na seguinte ordem:
  /usr/games
  /home/blau/bin
 
-Repare que, no meu caso, a última pasta em que o shell fará a busca
-pelos arquivos dos executáveis será em /home/blau/bin, que é um
-diretório (bin) na minha pasta de usuário ( /home/blau). Este caminho
-não existia originalmente na variável de ambiente PATH quando eu
-instalei o meu sistema, eu tive que incluí-lo com o seguinte comando:
-2 – O Bash como linguagem de programação                                  71
+Repare que, no meu caso, a última pasta em que o shell fará a busca pelos arquivos dos executáveis será em /home/blau/bin, que é um diretório (bin) na minha pasta de usuário ( /home/blau). Este caminho não existia originalmente na variável de ambiente PATH quando eu instalei o meu sistema, eu tive que incluí-lo com o seguinte comando:
 
 Exemplo 2.14 – Incluindo temporariamente um caminho na variável ‘PATH’.
 
  :~$ PATH=$PATH:/home/blau/bin
 
-Como você pode ver, o comando é uma operação de atribuição, como
-aquela vista no exemplo 1.10, mas algo parece diferente, por isso vamos
-tentar entendê-lo da mesma forma que o shell faria.
+Como você pode ver, o comando é uma operação de atribuição, como aquela vista no exemplo 1.10, mas algo parece diferente, por isso vamos tentar entendê-lo da mesma forma que o shell faria.
 
-A primeira coisa que o shell faz antes de interpretar uma linha de
-comando é procurar pelas possíveis expansões, o que ele descobriria
-pela presença do sinal $. Como vimos, o $ é utilizado na expansão dos
-valores armazenados nas variáveis (também chamada de expansão de
-parâmetros), logo, o shell continuaria percorrendo a linha em busca de
-um nome de variável válido, encontrando os caracteres P, A, T, H...
+A primeira coisa que o shell faz antes de interpretar uma linha de comando é procurar pelas possíveis expansões, o que ele descobriria pela presença do sinal $. Como vimos, o $ é utilizado na expansão dos valores armazenados nas variáveis (também chamada de expansão de parâmetros), logo, o shell continuaria percorrendo a linha em busca de um nome de variável válido, encontrando os caracteres P, A, T, H...
 
 Opa! O dois pontos (:)não é um caractere válido no nome de variáveis!
 
